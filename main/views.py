@@ -9,3 +9,17 @@ def index_view(request):
     template = 'index.html'
 
     return render(request, template, context)
+
+
+def about_view(request):
+    context = {}
+    template = 'abou_us.html'
+
+    return render(request, template, context)
+
+
+def gallery_view(request):
+    context = {}
+    template = 'gallery-page.html'
+
+    return render(request, template, context)

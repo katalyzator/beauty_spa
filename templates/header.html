@@ -1,9 +1,12 @@
+{% load staticfiles %}
+
 <header uk-sticky="top: 100; animation: uk-animation-slide-top; bottom: #sticky-on-scroll-up">
     <div class="uk-container">
         <nav class="uk-navbar" uk-navbar="">
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
-                    <li class="logo"><a href="#"><img src="img/png/logo.png" alt=""></a></li>
+                    <li class="logo"><a href="{% url 'index_view' %}"><img src="{% static 'img/png/logo.png' %}" alt=""></a>
+                    </li>
                 </ul>
             </div>
             <div class="uk-navbar-right">
@@ -29,8 +32,8 @@
                 </ul>
                 <h5>О SPA центре</h5>
                 <ul class="uk-nav uk-nav-default">
-                    <li><a href="">О нас</a></li>
-                    <li><a href="">Галерея</a></li>
+                    <li><a href="{% url 'about_view' %}">О нас</a></li>
+                    <li><a href="{% url 'gallery_view' %}">Галерея</a></li>
                     <li><a href="">Этикет</a></li>
                     <li><a href="">События и новости</a></li>
                     <li><a href="">Публикации и пресса</a></li>
