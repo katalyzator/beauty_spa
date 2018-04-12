@@ -345,11 +345,11 @@
                                 <div class="item uk-padding-large">
                                     <ul class="uk-subnav uk-subnav-pill uk-child-width-1-3"
                                         uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
-                                        <li><a class="uk-cover-container" href="#"><img src="img/jpg/g.jpg" alt=""
+                                        <li><a class="uk-cover-container" href="#"><img src="{% static 'img/jpg/g.jpg' %}" alt=""
                                                                                         uk-cover=""></a></li>
-                                        <li><a class="uk-cover-container" href="#"><img src="img/jpg/g.jpg" alt=""
+                                        <li><a class="uk-cover-container" href="#"><img src="{% static 'img/jpg/g.jpg' %}" alt=""
                                                                                         uk-cover=""></a></li>
-                                        <li><a class="uk-cover-container" href="#"><img src="img/jpg/g.jpg" alt=""
+                                        <li><a class="uk-cover-container" href="#"><img src="{% static 'img/jpg/g.jpg' %}" alt=""
                                                                                         uk-cover=""></a></li>
                                     </ul>
                                     <ul class="uk-switcher">
@@ -378,11 +378,11 @@
                                 <div class="item uk-padding-large">
                                     <ul class="uk-subnav uk-subnav-pill uk-child-width-1-3"
                                         uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
-                                        <li><a class="uk-cover-container" href="#"><img src="img/jpg/g.jpg" alt=""
+                                        <li><a class="uk-cover-container" href="#"><img src="{% static 'img/jpg/g.jpg' %}" alt=""
                                                                                         uk-cover=""></a></li>
-                                        <li><a class="uk-cover-container" href="#"><img src="img/jpg/g.jpg" alt=""
+                                        <li><a class="uk-cover-container" href="#"><img src="{% static 'img/jpg/g.jpg' %}" alt=""
                                                                                         uk-cover=""></a></li>
-                                        <li><a class="uk-cover-container" href="#"><img src="img/jpg/g.jpg" alt=""
+                                        <li><a class="uk-cover-container" href="#"><img src="{% static 'img/jpg/g.jpg' %}" alt=""
                                                                                         uk-cover=""></a></li>
                                     </ul>
                                     <ul class="uk-switcher uk-margin">
@@ -406,12 +406,12 @@
             </div>
         </div>
     </section>
-    <section class="banner-call-back uk-background-cover" style="background-image: url(img/jpg/banner2.jpg);">
+    <section class="banner-call-back uk-background-cover" style="background-image: url({% static 'img/jpg/banner2.jpg' %});">
         <div class="uk-container">
             <div class="uk-flex uk-flex-left">
                 <div class="item uk-text-center uk-flex uk-flex-middle"
                      uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.5">
-                    <div><img src="img/png/logo.png" alt="">
+                    <div><img src="{% static 'img/png/logo.png' %}" alt="">
                         <h3>Вы уже решили записаться на прием в SPA?</h3><a class="uk-button uk-button-default" href="">Получить
                             консультацию</a>
                     </div>
@@ -420,7 +420,7 @@
         </div>
     </section>
     <section class="spa-kitchen">
-        <div class="bg-image" style="background-image: url(img/jpg/kitchen.jpg);"></div>
+        <div class="bg-image" style="background-image: url({% static 'img/jpg/kitchen.jpg' %});"></div>
         <div class="uk-container">
             <div class="uk-grid uk-grid-collapse uk-child-width-1-2@m" uk-grid="">
                 <div></div>
@@ -435,25 +435,25 @@
                         </div>
                         <div class="uk-grid uk-grid-small uk-child-width-1-2@m">
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k1.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k1.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Правильное питание</p>
                                 </div>
                             </div>
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k2.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k2.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Большой ассортимент блюд</p>
                                 </div>
                             </div>
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k3.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k3.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Комфортное место</p>
                                 </div>
                             </div>
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k4.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k4.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Профессиональные повара</p>
                                 </div>
@@ -470,21 +470,21 @@
         <div class="bg-image">
             <div class="cosmetic-boutique-slider uk-flex uk-flex-middle">
                 <div>
-                    <div class="uk-cover-container image"><img src="img/png/kb.png" alt=""></div>
+                    <div class="uk-cover-container image"><img src="{% static 'img/png/kb.png' %}" alt=""></div>
                     <div class="text">
                         <h3 class="uk-margin-remove">Salin de Biosel</h3>
                         <p class="uk-margin-remove">Профессиональная косметика класса люкс</p>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-cover-container image"><img src="img/png/kb.png" alt=""></div>
+                    <div class="uk-cover-container image"><img src="{% static 'img/png/kb.png' %}" alt=""></div>
                     <div class="text">
                         <h3 class="uk-margin-remove">Salin de Biosel</h3>
                         <p class="uk-margin-remove">Профессиональная косметика класса люкс</p>
                     </div>
                 </div>
                 <div>
-                    <div class="uk-cover-container image"><img src="img/png/kb.png" alt=""></div>
+                    <div class="uk-cover-container image"><img src="{% static 'img/png/kb.png' %}" alt=""></div>
                     <div class="text">
                         <h3 class="uk-margin-remove">Salin de Biosel Bottom</h3>
                         <p class="uk-margin-remove">Профессиональная косметика класса люкс Профессиональная косметика
@@ -505,25 +505,25 @@
                         </div>
                         <div class="uk-grid uk-grid-small uk-child-width-1-2@m">
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k5.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k5.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Проверенные производители</p>
                                 </div>
                             </div>
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k6.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k6.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Гарантия качества</p>
                                 </div>
                             </div>
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k7.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k7.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Натуральные ингридиенты</p>
                                 </div>
                             </div>
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
-                                <div class="uk-width-auto@m"><img src="img/png/k8.png" alt=""></div>
+                                <div class="uk-width-auto@m"><img src="{% static 'img/png/k8.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
                                     <p>Косметика для тела</p>
                                 </div>
@@ -539,7 +539,7 @@
     </section>
     <section class="gift_certificates">
         <div class="uk-container">
-            <div class="uk-text-center"><img src="img/png/super.png" alt="">
+            <div class="uk-text-center"><img src="{% static 'img/png/super.png' %}" alt="">
                 <h4>Подарочные сертификаты</h4>
                 <p>«Beauty SPA» с удовольствием предлагает Вам свои подарки — подарочные сертификаты с безграничным
                     номиналом и курьерской доставкой в любую точку Бишкека. </p><a class="uk-button uk-button-default"
@@ -564,36 +564,36 @@
             <div class="gallery-content uk-grid uk-grid-collapse uk-child-width-1-5@l uk-child-width-1-4@m uk-child-width-1-3@s uk-child-width-1-2"
                  uk-grid="" uk-lightbox="animation: slide">
                 <div class="mix category-1">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m1.jpg"><img
-                            src="img/jpg/m1.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m1.jpg' %}"><img
+                            src="{% static 'img/jpg/m1.jpg' %}" alt="" uk-cover=""></div>
                 </div>
                 <div class="mix category-1">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m2.jpg"><img
-                            src="img/jpg/m2.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m2.jpg' %}"><img
+                            src="{% static 'img/jpg/m2.jpg' %}" alt="" uk-cover=""></div>
                 </div>
                 <div class="mix category-2">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m3.jpg"><img
-                            src="img/jpg/m3.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m3.jpg' %}"><img
+                            src="{% static 'img/jpg/m3.jpg' %}" alt="" uk-cover=""></div>
                 </div>
                 <div class="mix category-2">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m4.jpg"><img
-                            src="img/jpg/m4.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m4.jpg' %}"><img
+                            src="{% static 'img/jpg/m4.jpg' %}" alt="" uk-cover=""></div>
                 </div>
                 <div class="mix category-3">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m1.jpg"><img
-                            src="img/jpg/m1.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m1.jpg' %}"><img
+                            src="{% static 'img/jpg/m1.jpg' %}" alt="" uk-cover=""></div>
                 </div>
                 <div class="mix category-3">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m2.jpg"><img
-                            src="img/jpg/m2.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m2.jpg' %}"><img
+                            src="{% static 'img/jpg/m2.jpg' %}" alt="" uk-cover=""></div>
                 </div>
                 <div class="mix category-4">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m1.jpg"><img
-                            src="img/jpg/m1.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m1.jpg' %}"><img
+                            src="{% static 'img/jpg/m1.jpg' %}" alt="" uk-cover=""></div>
                 </div>
                 <div class="mix category-4">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m2.jpg"><img
-                            src="img/jpg/m2.jpg" alt="" uk-cover=""></div>
+                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m2.jpg' %}"><img
+                            src="{% static 'img/jpg/m2.jpg' %}" alt="" uk-cover=""></div>
                 </div>
             </div>
         </div>
@@ -604,7 +604,7 @@
             <div class="uk-grid uk-child-width-1-3@l uk-child-width-1-2@m" uk-grid="">
                 <div>
                     <div class="item uk-grid uk-grid-collapse">
-                        <div class="image-wrapper uk-cover-container"><img src="img/jpg/ab1.jpg" alt="" uk-cover="">
+                        <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/ab1.jpg' %}" alt="" uk-cover="">
                         </div>
                         <div class="uk-width-expand text">
                             <h4>Бронирование на заказ</h4>
@@ -615,7 +615,7 @@
                 </div>
                 <div>
                     <div class="item uk-grid uk-grid-collapse">
-                        <div class="image-wrapper uk-cover-container"><img src="img/jpg/ab2.jpg" alt="" uk-cover="">
+                        <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/ab2.jpg' %}" alt="" uk-cover="">
                         </div>
                         <div class="uk-width-expand text">
                             <h4>Бесплатная парковка</h4>
@@ -626,7 +626,7 @@
                 </div>
                 <div>
                     <div class="item uk-grid uk-grid-collapse">
-                        <div class="image-wrapper uk-cover-container"><img src="img/jpg/ab3.jpg" alt="" uk-cover="">
+                        <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/ab3.jpg' %}" alt="" uk-cover="">
                         </div>
                         <div class="uk-width-expand text">
                             <h4>Онлайн покупки</h4>
@@ -637,7 +637,7 @@
                 </div>
                 <div>
                     <div class="item uk-grid uk-grid-collapse">
-                        <div class="image-wrapper uk-cover-container"><img src="img/jpg/ab4.jpg" alt="" uk-cover="">
+                        <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/ab4.jpg' %}" alt="" uk-cover="">
                         </div>
                         <div class="uk-width-expand text">
                             <h4>Визажист на дом</h4>
@@ -648,7 +648,7 @@
                 </div>
                 <div>
                     <div class="item uk-grid uk-grid-collapse">
-                        <div class="image-wrapper uk-cover-container"><img src="img/jpg/ab5.jpg" alt="" uk-cover="">
+                        <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/ab5.jpg' %}" alt="" uk-cover="">
                         </div>
                         <div class="uk-width-expand text">
                             <h4>Полотенца, мыло, шампунь включено</h4>
@@ -659,7 +659,7 @@
                 </div>
                 <div>
                     <div class="item uk-grid uk-grid-collapse">
-                        <div class="image-wrapper uk-cover-container"><img src="img/jpg/ab6.jpg" alt="" uk-cover="">
+                        <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/ab6.jpg' %}" alt="" uk-cover="">
                         </div>
                         <div class="uk-width-expand text">
                             <h4>Полное конфедициальность</h4>
