@@ -23,3 +23,10 @@ def gallery_view(request):
     template = 'gallery-page.html'
 
     return render(request, template, context)
+
+
+def bootick_view(request):
+    context = {}
+    template = 'bootick.html'
+
+    return render(request, template, context)
