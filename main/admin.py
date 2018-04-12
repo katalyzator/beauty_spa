@@ -5,6 +5,8 @@ from django.contrib import admin
 
 from main.models import Member
 
+admin.site.site_header = 'Панель управления Beauty Spa'
+
 
 class MemberAdmin(admin.ModelAdmin):
     list_display = ['full_name', 'profession']

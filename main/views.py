@@ -3,9 +3,14 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
+from main.models import Member
+
 
 def index_view(request):
-    context = {}
+    members = Member.objects.all()
+    context = {
+        "members": members
+    }
     template = 'index.html'
 
     return render(request, template, context)
