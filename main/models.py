@@ -10,6 +10,8 @@ class Member(models.Model):
     profession = models.CharField(max_length=255, verbose_name='Специализация')
     description = models.TextField(max_length=1000, verbose_name='Описание')
 
+    image = models.ImageField(upload_to='images/specialists', verbose_name='Картинка', help_text='Размер картинки должен быть 390x300')
+
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
