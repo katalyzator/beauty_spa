@@ -30,3 +30,10 @@ def bootick_view(request):
     template = 'bootick.html'
 
     return render(request, template, context)
+
+
+def license_view(request):
+    context = {}
+    template = 'license.html'
+
+    return render(request, template, context)
