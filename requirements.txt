@@ -2,3 +2,4 @@ Django==1.11.12
 django-jet==1.0.7
 Pillow==5.1.0
 pytz==2018.4
+sorl-thumbnail==12.4.1
