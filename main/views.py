@@ -49,3 +49,10 @@ def information_view(request):
     template = 'information.html'
 
     return render(request, template, context)
+
+
+def public_view(request):
+    context = {}
+    template = 'publick.html'
+
+    return render(request, template, context)
