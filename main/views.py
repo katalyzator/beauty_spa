@@ -42,3 +42,10 @@ def license_view(request):
     template = 'license.html'
 
     return render(request, template, context)
+
+
+def information_view(request):
+    context = {}
+    template = 'information.html'
+
+    return render(request, template, context)

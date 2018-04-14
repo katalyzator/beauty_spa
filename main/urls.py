@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from main.views import index_view, about_view, gallery_view, bootick_view, license_view
+from main.views import index_view, about_view, gallery_view, bootick_view, license_view, information_view
 
 urlpatterns = [
     url(r'^$', index_view, name='index_view'),
@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^gallery/$', gallery_view, name='gallery_view'),
     url(r'^bootick/$', bootick_view, name='bootick_view'),
     url(r'^licenses/$', license_view, name='license_view'),
+    url(r'^information/$', information_view, name='information_view'),
 ]
