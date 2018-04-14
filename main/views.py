@@ -56,3 +56,10 @@ def public_view(request):
     template = 'publick.html'
 
     return render(request, template, context)
+
+
+def review_view(request):
+    context = {}
+    template = 'revius.html'
+
+    return render(request, template, context)
