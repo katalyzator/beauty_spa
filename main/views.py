@@ -70,3 +70,10 @@ def service_view(request):
     template = 'service.html'
 
     return render(request, template, context)
+
+
+def eticket_view(request):
+    context = {}
+    template = 'etiket.html'
+
+    return render(request, template, context)
