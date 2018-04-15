@@ -1,7 +1,7 @@
 from django.conf.urls import url
 
 from main.views import index_view, about_view, gallery_view, bootick_view, license_view, information_view, public_view, \
-    review_view
+    review_view, service_view
 
 urlpatterns = [
     url(r'^$', index_view, name='index_view'),
@@ -12,4 +12,5 @@ urlpatterns = [
     url(r'^information/$', information_view, name='information_view'),
     url(r'^public/$', public_view, name='public_view'),
     url(r'^reviews/$', review_view, name='review_view'),
+    url(r'^services/$', service_view, name='service_view'),
 ]

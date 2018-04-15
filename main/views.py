@@ -63,3 +63,10 @@ def review_view(request):
     template = 'revius.html'
 
     return render(request, template, context)
+
+
+def service_view(request):
+    context = {}
+    template = 'service.html'
+
+    return render(request, template, context)
