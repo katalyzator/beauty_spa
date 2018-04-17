@@ -17,4 +17,5 @@ urlpatterns = [
     url(r'^certificates/$', certificate_view, name='certificate_view'),
     url(r'^partners/$', partner_view, name='partner_view'),
     url(r'^special_offers/$', special_offers, name='special_offers'),
+    url(r'^kitchen/$', kitchen_view, name='kitchen_view'),
 ]

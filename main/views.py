@@ -105,3 +105,10 @@ def special_offers(request):
     template = 'special-offers.html'
 
     return render(request, template, context)
+
+
+def kitchen_view(request):
+    context = {}
+    template = 'spa_kitchen.html'
+
+    return render(request, template, context)
