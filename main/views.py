@@ -98,3 +98,10 @@ def partner_view(request):
     template = 'partners.html'
 
     return render(request, template, context)
+
+
+def special_offers(request):
+    context = {}
+    template = 'special-offers.html'
+
+    return render(request, template, context)

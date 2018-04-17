@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^events/$', event_view, name='event_view'),
     url(r'^certificates/$', certificate_view, name='certificate_view'),
     url(r'^partners/$', partner_view, name='partner_view'),
+    url(r'^special_offers/$', special_offers, name='special_offers'),
 ]
