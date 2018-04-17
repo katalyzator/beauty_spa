@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^services/$', service_view, name='service_view'),
     url(r'^etiket/$', eticket_view, name='etiket_view'),
     url(r'^events/$', event_view, name='event_view'),
+    url(r'^certificates/$', certificate_view, name='certificate_view'),
+    url(r'^partners/$', partner_view, name='partner_view'),
 ]

@@ -84,3 +84,17 @@ def event_view(request):
     template = 'event.html'
 
     return render(request, template, context)
+
+
+def certificate_view(request):
+    context = {}
+    template = 'spa-sertificat.html'
+
+    return render(request, template, context)
+
+
+def partner_view(request):
+    context = {}
+    template = 'partners.html'
+
+    return render(request, template, context)

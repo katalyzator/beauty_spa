@@ -15,7 +15,7 @@
                             uk-icon="icon: menu"></span><span>меню</span></a></li>
                     <li class="uk-visible@l"><a href="#">О SPA центре</a></li>
                     <li class="uk-visible@l"><a href="{% url 'service_view' %}">Услуги</a></li>
-                    <li class="uk-visible@l"><a href="#">spa сертификаты</a></li>
+                    <li class="uk-visible@l"><a href="{% url 'certificate_view' %}">spa сертификаты</a></li>
                     <li class="uk-text-center button uk-visible@m">
                         <div><a href="tel: +996 (555) 310 320">+996 (555) 310 320</a></div>
                         <div class="call-back"><a class="uk-button-default" href="">Записаться онлайн</a></div>
@@ -34,10 +34,10 @@
                 <ul class="uk-nav uk-nav-default">
                     <li><a href="{% url 'about_view' %}">О нас</a></li>
                     <li><a href="{% url 'gallery_view' %}">Галерея</a></li>
-                    <li><a href="">Этикет</a></li>
+                    <li><a href="{% url 'etiket_view' %}">Этикет</a></li>
                     <li><a href="{% url 'event_view' %}">События и новости</a></li>
                     <li><a href="{% url 'public_view' %}">Публикации и пресса</a></li>
-                    <li><a href="">Наши партнеры</a></li>
+                    <li><a href="{% url 'partner_view' %}">Наши партнеры</a></li>
                     <li><a href="{% url 'review_view' %}">Отзывы</a></li>
                     <li><a href="{% url 'license_view' %}">Лицензия</a></li>
                     <li><a href="{% url 'information_view' %}">Правовая информация</a></li>
@@ -53,7 +53,7 @@
                 <ul class="uk-nav uk-nav-default">
                     <li><a href="{% url 'bootick_view' %}">Косметический бутик</a></li>
                     <li><a href="">Спецпредложения</a></li>
-                    <li><a href="">SPA -сертификаты</a></li>
+                    <li><a href="{% url 'certificate_view' %}">SPA -сертификаты</a></li>
                     <li><a href="">SPA- кухня</a></li>
                 </ul>
             </div>
