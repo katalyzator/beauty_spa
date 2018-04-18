@@ -111,3 +111,15 @@ class Partner(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.name)
+
+
+class Gallery(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Название картинки')
+    image = models.ImageField(upload_to='images/gallery_images', verbose_name='Картинка')
+
+    class Meta:
+        verbose_name_plural = 'Галерея'
+        verbose_name = 'Картинку'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
