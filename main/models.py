@@ -77,3 +77,22 @@ class DiscountCertificate(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class DiscountCard(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Название')
+    tag = models.CharField(max_length=255, verbose_name='Тэг', blank=True, null=True)
+    description = models.TextField(verbose_name='Описание')
+    price = models.CharField(max_length=255, verbose_name='Цена')
+    is_active = models.BooleanField(default=False, verbose_name='Активность',
+                                    help_text='Поставьте галочку, чтобы вывести на сайте')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Подарочные Карты'
+        verbose_name = 'Карту'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from main.models import Member, Review, Service, DiscountCertificate
+from main.models import Member, Review, Service, DiscountCertificate, DiscountCard
 
 admin.site.site_header = 'Панель управления Beauty Spa'
 
@@ -31,6 +31,14 @@ class DiscountCertificateAdmin(admin.ModelAdmin):
         model = DiscountCertificate
 
 
+class DiscountCardAdmin(admin.ModelAdmin):
+    list_display = ['title', 'is_active']
+    list_editable = ['is_active']
+
+    class Meta:
+        model = DiscountCard
+
+
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ['title', 'price']
 
@@ -38,6 +46,7 @@ class ServiceAdmin(admin.ModelAdmin):
         model = Service
 
 
+admin.site.register(DiscountCard, DiscountCardAdmin)
 admin.site.register(DiscountCertificate, DiscountCertificateAdmin)
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Review, ReviewAdmin)
