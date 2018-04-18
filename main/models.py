@@ -96,3 +96,18 @@ class DiscountCard(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class Partner(models.Model):
+    name = models.CharField(max_length=255, verbose_name='Название')
+    logo = models.ImageField(upload_to='images/partners_images', verbose_name='Логотип объекта')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Партнеры'
+        verbose_name = 'Партнера'
+
+    def __unicode__(self):
+        return smart_unicode(self.name)

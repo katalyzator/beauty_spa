@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from main.models import Member, Review, Service, DiscountCertificate, DiscountCard
+from main.models import Member, Review, Service, DiscountCertificate, DiscountCard, Partner
 
 admin.site.site_header = 'Панель управления Beauty Spa'
 
@@ -46,6 +46,14 @@ class ServiceAdmin(admin.ModelAdmin):
         model = Service
 
 
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+    class Meta:
+        model = Partner
+
+
+admin.site.register(Partner, PartnerAdmin)
 admin.site.register(DiscountCard, DiscountCardAdmin)
 admin.site.register(DiscountCertificate, DiscountCertificateAdmin)
 admin.site.register(Service, ServiceAdmin)
