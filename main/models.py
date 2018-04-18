@@ -123,3 +123,15 @@ class Gallery(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class License(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Название лицензии')
+    image = models.ImageField(upload_to='images/license_images', verbose_name='Картинка')
+
+    class Meta:
+        verbose_name_plural = 'Лицензии'
+        verbose_name = 'Картинку'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
