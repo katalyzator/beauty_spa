@@ -40,3 +40,21 @@ class Review(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.full_name)
+
+
+class Service(models.Model):
+    title = models.CharField(max_length=300, verbose_name='Название')
+    description = models.TextField(verbose_name='Описание')
+    duration = models.IntegerField(default=1, verbose_name='Длительность в днях')
+    price = models.CharField(max_length=300, verbose_name='Ценообразование',
+                             help_text='Пример: (от 1200 - 3000 за 1приход)')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Услуги'
+        verbose_name = 'Услугу'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
