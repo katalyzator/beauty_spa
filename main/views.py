@@ -14,7 +14,9 @@ partners = Partner.objects.all()
 
 def index_view(request):
     context = {
-        "members": members
+        "members": members,
+        "reviews": reviews,
+        "gallery": gallery
     }
     template = 'index.html'
 

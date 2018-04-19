@@ -114,8 +114,15 @@ class Partner(models.Model):
 
 
 class Gallery(models.Model):
+    GALLERY_TYPE = (
+        ('interior', 'Интерьер'),
+        ('world_of_beauty', 'Мир Beauty Spa'),
+        ('products', 'Продукция'),
+        ('life_style', 'Стиль жизни'),
+    )
     title = models.CharField(max_length=255, verbose_name='Название картинки')
     image = models.ImageField(upload_to='images/gallery_images', verbose_name='Картинка')
+    type_of_gallery = models.CharField(choices=GALLERY_TYPE, max_length=255, null=True)
 
     class Meta:
         verbose_name_plural = 'Галерея'
