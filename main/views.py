@@ -3,11 +3,16 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 
-from main.models import Member
+from main.models import *
+
+members = Member.objects.all()
+gallery = Gallery.objects.all()
+licenses = License.objects.all()
+reviews = Review.objects.filter(is_active=True)
+partners = Partner.objects.all()
 
 
 def index_view(request):
-    members = Member.objects.all()
     context = {
         "members": members
     }
@@ -17,7 +22,9 @@ def index_view(request):
 
 
 def about_view(request):
-    context = {}
+    context = {
+        "members": members
+    }
     template = 'abou_us.html'
 
     return render(request, template, context)
@@ -87,6 +94,8 @@ def event_view(request):
 
 
 def certificate_view(request):
+    certificates = DiscountCertificate.objects.all()
+    cards = DiscountCard.objects.all()
     context = {}
     template = 'spa-sertificat.html'
 
