@@ -124,6 +124,9 @@ class Gallery(models.Model):
     image = models.ImageField(upload_to='images/gallery_images', verbose_name='Картинка')
     type_of_gallery = models.CharField(choices=GALLERY_TYPE, max_length=255, null=True)
 
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
     class Meta:
         verbose_name_plural = 'Галерея'
         verbose_name = 'Картинку'
@@ -139,6 +142,21 @@ class License(models.Model):
     class Meta:
         verbose_name_plural = 'Лицензии'
         verbose_name = 'Картинку'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
+
+
+class Slider(models.Model):
+    title = models.CharField(max_length=800, verbose_name='Заголовок')
+    image = models.ImageField(upload_to='images/slider_images', verbose_name='Картинка')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Слайдеры'
+        verbose_name = 'Слайд'
 
     def __unicode__(self):
         return smart_unicode(self.title)
