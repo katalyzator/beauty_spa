@@ -345,35 +345,18 @@
                                 <div class="item uk-padding-large">
                                     <ul class="uk-subnav uk-subnav-pill uk-child-width-1-3"
                                         uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
-                                        <li><a class="uk-cover-container" href="#"><img
-                                                src="{% static 'img/jpg/g.jpg' %}" alt=""
-                                                uk-cover=""></a></li>
-                                        <li><a class="uk-cover-container" href="#"><img
-                                                src="{% static 'img/jpg/g.jpg' %}" alt=""
-                                                uk-cover=""></a></li>
-                                        <li><a class="uk-cover-container" href="#"><img
-                                                src="{% static 'img/jpg/g.jpg' %}" alt=""
-                                                uk-cover=""></a></li>
+                                        {% for item in reviews %}
+                                            <li><a class="uk-cover-container" href="#"><img
+                                                    src="{{ item.image.url }}" alt=""
+                                                    uk-cover=""></a></li>
+                                        {% endfor %}
                                     </ul>
                                     <ul class="uk-switcher">
-                                        <li><b>Айжана Асемова</b>
-                                            <p>Отличный спа-салон, безупречный дизайн, приветливый персонал, продуманные
-                                                программы, прекрасно проведенное время, праздник для тела и души,
-                                                попадаешь в другой мир, забываешь про шум и суету мегаполиса.
-                                                Замечательный массажист Ульяна. Огромное спасибо всему коллективу!!!</p>
-                                        </li>
-                                        <li><b>Айжана Асемова</b>
-                                            <p>Отличный спа-салон, безупречный дизайн, приветливый персонал, продуманные
-                                                программы, прекрасно проведенное время, праздник для тела и души,
-                                                попадаешь в другой мир, забываешь про шум и суету мегаполиса.
-                                                Замечательный массажист Ульяна. Огромное спасибо всему коллективу!!!</p>
-                                        </li>
-                                        <li><b>Айжана Асемова</b>
-                                            <p>Отличный спа-салон, безупречный дизайн, приветливый персонал, продуманные
-                                                программы, прекрасно проведенное время, праздник для тела и души,
-                                                попадаешь в другой мир, забываешь про шум и суету мегаполиса.
-                                                Замечательный массажист Ульяна. Огромное спасибо всему коллективу!!!</p>
-                                        </li>
+                                        {% for item in reviews %}
+                                            <li><b>{{ item.full_name }}</b>
+                                                <p>{{ item.text }}</p>
+                                            </li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
