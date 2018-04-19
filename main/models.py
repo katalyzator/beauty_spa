@@ -137,6 +137,7 @@ class Gallery(models.Model):
 
 class License(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название лицензии')
+    description = models.TextField(verbose_name='Описание')
     image = models.ImageField(upload_to='images/license_images', verbose_name='Картинка')
 
     class Meta:

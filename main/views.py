@@ -13,10 +13,12 @@ partners = Partner.objects.all()
 
 
 def index_view(request):
+    slider = Slider.objects.all()
     context = {
         "members": members,
         "reviews": reviews,
-        "gallery": gallery
+        "gallery": gallery,
+        "sliders": slider
     }
     template = 'index.html'
 

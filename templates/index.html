@@ -6,65 +6,26 @@
     <section class="home-slider uk-grid uk-grid-collapse uk-position-relative uk-child-width-1-2@m"
              uk-height-match="target: &gt; ul">
         <div class="slider-nav">
-            <div class="uk-flex uk-flex-middle">
-                <div class="text uk-flex uk-flex-middle" data-padding="350">
-                    <div class="uk-position-relative">
-                        <div>
-                            <h2>Beauty SPA by World Class </h2>
-                            <p>Впервые в Бишкеке предлагает своим Гостям концепцию повышенной комфортности и
-                                персонализированного сервиса в SPA нового поколения. </p><a
-                                class="uk-button uk-button-default" href="">Подробнее</a>
+            {% for item in sliders %}
+                <div class="uk-flex uk-flex-middle">
+                    <div class="text uk-flex uk-flex-middle" data-padding="350">
+                        <div class="uk-position-relative">
+                            <div>
+                                <h2>{{ item.title }}</h2>
+                                <p>{{ item.description }}</p><a
+                                    class="uk-button uk-button-default" href="">Подробнее</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="uk-flex uk-flex-middle">
-                <div class="text uk-flex uk-flex-middle" data-padding="350">
-                    <div class="uk-position-relative">
-                        <div>
-                            <h2>Beauty SPA by World Class </h2>
-                            <p>Впервые в Бишкеке предлагает своим Гостям концепцию повышенной комфортности и
-                                персонализированного сервиса в SPA нового поколения. </p><a
-                                class="uk-button uk-button-default" href="">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-flex uk-flex-middle">
-                <div class="text uk-flex uk-flex-middle" data-padding="350">
-                    <div class="uk-position-relative">
-                        <div>
-                            <h2>Beauty SPA by World Class </h2>
-                            <p>Впервые в Бишкеке предлагает своим Гостям концепцию повышенной комфортности и
-                                персонализированного сервиса в SPA нового поколения. </p><a
-                                class="uk-button uk-button-default" href="">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-flex uk-flex-middle">
-                <div class="text uk-flex uk-flex-middle" data-padding="350">
-                    <div class="uk-position-relative">
-                        <div>
-                            <h2>Beauty SPA by World Class </h2>
-                            <p>Впервые в Бишкеке предлагает своим Гостям концепцию повышенной комфортности и
-                                персонализированного сервиса в SPA нового поколения. </p><a
-                                class="uk-button uk-button-default" href="">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+
         </div>
         <div class="slider-for uk-visible@m">
-            <div class="uk-cover-container"><img data-lazy="{% static 'img/jpg/slider1.jpg' %}" alt="" uk-cover="">
-            </div>
-            <div class="uk-cover-container"><img data-lazy="{% static 'http://via.placeholder.com/350x150' %}" alt=""
-                                                 uk-cover="">
-            </div>
-            <div class="uk-cover-container"><img data-lazy="{% static 'img/jpg/slider1.jpg' %}" alt="" uk-cover="">
-            </div>
-            <div class="uk-cover-container"><img data-lazy="{% static 'img/jpg/slider1.jpg' %}" alt="" uk-cover="">
-            </div>
+            {% for item in sliders %}
+                <div class="uk-cover-container"><img data-lazy="{{ item.image.url }}" alt="" uk-cover="">
+                </div>
+            {% endfor %}
         </div>
     </section>
     <section class="sponsor">
