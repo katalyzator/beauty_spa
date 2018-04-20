@@ -10,6 +10,9 @@ gallery = Gallery.objects.all()
 licenses = License.objects.all()
 reviews = Review.objects.filter(is_active=True)
 partners = Partner.objects.all()
+services = Service.objects.all()
+certificates = DiscountCertificate.objects.all()
+cards = DiscountCard.objects.all()
 
 
 def index_view(request):
@@ -35,7 +38,9 @@ def about_view(request):
 
 
 def gallery_view(request):
-    context = {}
+    context = {
+        "gallery": gallery,
+    }
     template = 'gallery-page.html'
 
     return render(request, template, context)
@@ -49,7 +54,9 @@ def bootick_view(request):
 
 
 def license_view(request):
-    context = {}
+    context = {
+        "licenses": licenses
+    }
     template = 'license.html'
 
     return render(request, template, context)
@@ -77,7 +84,9 @@ def review_view(request):
 
 
 def service_view(request):
-    context = {}
+    context = {
+        "services": services
+    }
     template = 'service.html'
 
     return render(request, template, context)
@@ -98,16 +107,20 @@ def event_view(request):
 
 
 def certificate_view(request):
-    certificates = DiscountCertificate.objects.all()
-    cards = DiscountCard.objects.all()
-    context = {}
+
+    context = {
+        "certificates": certificates,
+        "cards": cards
+    }
     template = 'spa-sertificat.html'
 
     return render(request, template, context)
 
 
 def partner_view(request):
-    context = {}
+    context = {
+        "partners": partners
+    }
     template = 'partners.html'
 
     return render(request, template, context)
