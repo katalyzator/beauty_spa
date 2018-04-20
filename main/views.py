@@ -107,7 +107,6 @@ def event_view(request):
 
 
 def certificate_view(request):
-
     context = {
         "certificates": certificates,
         "cards": cards
@@ -136,5 +135,12 @@ def special_offers(request):
 def kitchen_view(request):
     context = {}
     template = 'spa_kitchen.html'
+
+    return render(request, template, context)
+
+
+def all_service_view(request):
+    context = {}
+    template = 'all-service.html'
 
     return render(request, template, context)
