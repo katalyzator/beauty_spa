@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}
+{% load staticfiles thumbnail %}
 
 {% block content %}
 
     <section class="banner-top uk-background-cover uk-text-center uk-panel uk-flex uk-flex-center uk-flex-middle"
              style="background-image: url({% static 'img/jpg/gal.jpg' %});">
         <div>
-{#            <ul class="uk-breadcrumb">#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><span>название страницы</span></li>#}
-{#            </ul>#}
+            {#            <ul class="uk-breadcrumb">#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><span>название страницы</span></li>#}
+            {#            </ul>#}
             <h1>Галерея Beauty SPA</h1>
         </div>
     </section>
@@ -28,54 +28,45 @@
             </div>
             <div class="gallery-content uk-grid uk-grid-collapse uk-child-width-1-5@l uk-child-width-1-4@m uk-child-width-1-3@s uk-child-width-1-2"
                  uk-grid="" uk-lightbox="animation: slide">
-                <div class="mix category-1">
-                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m1.jpg' %}"><img
-                            src="{% static 'img/jpg/m1.jpg' %}"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
-                <div class="mix category-1">
-                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m2.jpg' %}"><img
-                            src="{% static 'img/jpg/m2.jpg' %}"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
-                <div class="mix category-2">
-                    <div class="item uk-cover-container uk-height-small" data-src="{% static 'img/jpg/m3.jpg' %}"><img
-                            src="{% static 'img/jpg/m3.jpg' %}"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
-                <div class="mix category-2">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m4.jpg"><img
-                            src="{% static 'img/jpg/m4.jpg' %}"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
-                <div class="mix category-3">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m1.jpg"><img
-                            src="{% static 'img/jpg/m1.jpg' %}"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
-                <div class="mix category-3">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m2.jpg"><img
-                            src="{% static 'img/jpg/m2.jpg' %}"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
-                <div class="mix category-4">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m1.jpg"><img
-                            src="img/jpg/m1.jpg"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
-                <div class="mix category-4">
-                    <div class="item uk-cover-container uk-height-small" data-src="img/jpg/m2.jpg"><img
-                            src="img/jpg/m2.jpg"
-                            alt="" uk-cover="">
-                    </div>
-                </div>
+                {% for item in gallery %}
+                    {% if item.type_of_gallery == 'interior' %}
+                        <div class="mix category-1">
+                            <div class="item uk-cover-container uk-height-small"
+                                 data-src="{{ item.image.url }}">
+                                {% thumbnail item.image "240x150" as im_interior %}
+                                    <img src="{{ im_interior.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if item.type_of_gallery == 'world_of_beauty' %}
+                        <div class="mix category-2">
+                            <div class="item uk-cover-container uk-height-small" data-src="{{ item.image.url }}">
+                                {% thumbnail item.image "240x150" as im_beauty %}
+                                    <img src="{{ im_beauty.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if item.type_of_gallery == 'products' %}
+                        <div class="mix category-3">
+                            <div class="item uk-cover-container uk-height-small" data-src="{{ item.image.url }}">
+                                {% thumbnail item.image "240x150" as im %}
+                                    <img src="{{ im.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if item.type_of_gallery == 'life_style' %}
+                        <div class="mix category-4">
+                            <div class="item uk-cover-container uk-height-small" data-src="{{ item.image.url }}">
+                                {% thumbnail item.image "240x150" as im %}
+                                    <img src="{{ im.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </section>

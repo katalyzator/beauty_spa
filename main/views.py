@@ -29,6 +29,7 @@ def index_view(request):
 
 
 def about_view(request):
+
     context = {
         "members": members
     }
@@ -38,6 +39,8 @@ def about_view(request):
 
 
 def gallery_view(request):
+    # for item in gallery:
+    #     print item.type_of_gallery
     context = {
         "gallery": gallery,
     }
