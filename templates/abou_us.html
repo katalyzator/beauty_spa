@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}
+{% load staticfiles thumbnail %}
 
 {% block content %}
     <section class="banner-top uk-background-cover uk-text-left "
              style="background-image: url({% static 'img/jpg/about.jpg' %});">
         <div class="uk-container">
-{#            <ul class="uk-breadcrumb">#}
-{#                <li><a href="">название страницы </a></li>#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><span>название страницы</span></li>#}
-{#            </ul>#}
+            {#            <ul class="uk-breadcrumb">#}
+            {#                <li><a href="">название страницы </a></li>#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><span>название страницы</span></li>#}
+            {#            </ul>#}
             <div class="uk-grid uk-margin-xlarge-top uk-child-width-1-2@m" uk-grid="">
                 <div>
                     <h1>О SPA <br> Центре</h1>
@@ -159,86 +159,26 @@
             <div class="slider-specialist uk-position-relative uk-visible-toggle">
                 <div>
                     <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-grid">
-                        <div>
-                            <div class="item uk-position-relative"><a class="uk-position-cover" href=""></a>
-                                <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/sl1.jpg' %}"
-                                                                                   alt=""
-                                                                                   uk-cover=""></div>
-                                <div class="text-block">
-                                    <div class="uk-margin">
-                                        <h6>Визажист </h6>
-                                        <h5>Ольга Васильева</h5>
+                        {% for item in members %}
+                            <div>
+                                <div class="item uk-position-relative"><a class="uk-position-cover" href=""></a>
+                                    <div class="image-wrapper uk-cover-container">
+                                        {% thumbnail item.image "270x303" as im %}
+                                            <img src="{{ im.url }}" alt="" uk-cover="">
+                                        {% endthumbnail %}
                                     </div>
-                                    <div class="uk-margin">
-                                        <p>Врач-косметолог, Житная, Павлово, Жуковка</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="item uk-position-relative"><a class="uk-position-cover" href=""></a>
-                                <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/sl1.jpg' %}"
-                                                                                   alt=""
-                                                                                   uk-cover=""></div>
-                                <div class="text-block">
-                                    <div class="uk-margin">
-                                        <h6>Визажист </h6>
-                                        <h5>Ольга Васильева</h5>
-                                    </div>
-                                    <div class="uk-margin">
-                                        <p>Врач-косметолог, Житная, Павлово, Жуковка</p>
+                                    <div class="text-block">
+                                        <div class="uk-margin">
+                                            <h6>{{ item.profession }} </h6>
+                                            <h5>{{ item.full_name }}</h5>
+                                        </div>
+                                        <div class="uk-margin">
+                                            <p>{{ item.description }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <div class="item uk-position-relative"><a class="uk-position-cover" href=""></a>
-                                <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/sl1.jpg' %}"
-                                                                                   alt=""
-                                                                                   uk-cover=""></div>
-                                <div class="text-block">
-                                    <div class="uk-margin">
-                                        <h6>Визажист </h6>
-                                        <h5>Ольга Васильева</h5>
-                                    </div>
-                                    <div class="uk-margin">
-                                        <p>Врач-косметолог, Житная, Павлово, Жуковка</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="item uk-position-relative"><a class="uk-position-cover" href=""></a>
-                                <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/sl1.jpg' %}"
-                                                                                   alt=""
-                                                                                   uk-cover=""></div>
-                                <div class="text-block">
-                                    <div class="uk-margin">
-                                        <h6>Визажист </h6>
-                                        <h5>Ольга Васильева</h5>
-                                    </div>
-                                    <div class="uk-margin">
-                                        <p>Врач-косметолог, Житная, Павлово, Жуковка</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="item uk-position-relative"><a class="uk-position-cover" href=""></a>
-                                <div class="image-wrapper uk-cover-container"><img src="{% static 'img/jpg/sl1.jpg' %}"
-                                                                                   alt=""
-                                                                                   uk-cover=""></div>
-                                <div class="text-block">
-                                    <div class="uk-margin">
-                                        <h6>Визажист </h6>
-                                        <h5>Ольга Васильева</h5>
-                                    </div>
-                                    <div class="uk-margin">
-                                        <p>Врач-косметолог, Житная, Павлово, Жуковка</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
