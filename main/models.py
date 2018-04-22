@@ -43,11 +43,21 @@ class Review(models.Model):
 
 
 class Service(models.Model):
+    SERVICE_CATEGORY = (
+        ('consulting', 'Диагностика и консультация'),
+        ('medicine', 'Косметология и эстетическая медицина'),
+        ('spa', 'Spa терапия'),
+        ('bath_spa', 'Банный spa'),
+        ('art_beauty', 'Арт и Бьюти студия')
+    )
+    category = models.CharField(choices=SERVICE_CATEGORY, max_length=255, verbose_name='Выберите категорию')
     title = models.CharField(max_length=300, verbose_name='Название')
     description = models.TextField(verbose_name='Описание')
     duration = models.IntegerField(default=1, verbose_name='Длительность в днях')
     price = models.CharField(max_length=300, verbose_name='Ценообразование',
                              help_text='Пример: (от 1200 - 3000 за 1приход)')
+
+    image = models.ImageField(upload_to='images/service_images', verbose_name='Картинка')
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

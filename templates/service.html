@@ -7,84 +7,52 @@
     <section class="banner-top uk-background-cover uk-text-center uk-panel uk-flex uk-flex-center uk-flex-middle"
              style="background-image: url({% static 'img/jpg/service.jpg' %});">
         <div>
-{#            <ul class="uk-breadcrumb">#}
-{#                <li><a href="">название страницы </a></li>#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><span>название страницы</span></li>#}
-{#            </ul>#}
-            <h1>Косметология и эстетическая медицина </h1>
+            {#            <ul class="uk-breadcrumb">#}
+            {#                <li><a href="">название страницы </a></li>#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><span>название страницы</span></li>#}
+            {#            </ul>#}
+            <h1>{{ page_title }}</h1>
         </div>
     </section>
     <section class="service">
         <div class="uk-container">
-            <div class="uk-grid border-bottom uk-flex-middle" uk-grid="">
-                <div class="uk-width-expand@m left-side">
-                    <div class="uk-margin-medium">
-                        <div class="uk-flex-middle uk-margin-remove" uk-grid="">
-                            <div class="uk-width-auto@m ">
-                                <div class="image uk-cover-container"><img src="{% static 'img/png/human.png' %}" alt="Image"
-                                                                           uk-cover=""></div>
-                            </div>
-                            <div class="uk-width-2-3@m">
-                                <div>
-                                    <h4>ЭСТЕТИЧЕСКАЯ КОСМЕТОЛОГИЯ</h4>
-                                    <p>Эстетическая косметология - это косметологические программы по очищению, лечению,
-                                        восстановлению, омоложению, устранению эстетических недостатков кожи.</p>
+            {% for item in services %}
+                <div class="uk-grid border-bottom uk-flex-middle" uk-grid="">
+                    <div class="uk-width-expand@m left-side">
+                        <div class="uk-margin-medium">
+                            <div class="uk-flex-middle uk-margin-remove" uk-grid="">
+                                <div class="uk-width-auto@m ">
+                                    <div class="image uk-cover-container"><img src="{{ item.image }}"
+                                                                               alt="Image"
+                                                                               uk-cover=""></div>
+                                </div>
+                                <div class="uk-width-2-3@m">
+                                    <div>
+                                        <h4>{{ item.title }}</h4>
+                                        <p>{{ item.description }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="uk-width-1-4@m right-side">
-                    <div>
-                        <div class="item uk-position-relative">
-                            <ul>
-                                <li>
-                                    <h5>Длительность</h5><span>5 дней</span>
-                                </li>
-                                <li>
-                                    <h5>Стоимость</h5><span>от 1200 - 3000 за 1приход</span>
-                                </li>
-                            </ul>
-                            <a class="uk-button uk-button-default" href="">Записаться онлайн</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="uk-grid border-bottom uk-flex-middle" uk-grid="">
-                <div class="uk-width-expand@m left-side">
-                    <div class="uk-margin-medium">
-                        <div class="uk-flex-middle uk-margin-remove" uk-grid="">
-                            <div class="uk-width-auto@m ">
-                                <div class="image uk-cover-container"><img src="{% static 'img/png/human.png' %}" alt="Image"
-                                                                           uk-cover=""></div>
-                            </div>
-                            <div class="uk-width-2-3@m">
-                                <div>
-                                    <h4>ЭСТЕТИЧЕСКАЯ КОСМЕТОЛОГИЯ</h4>
-                                    <p>Эстетическая косметология - это косметологические программы по очищению, лечению,
-                                        восстановлению, омоложению, устранению эстетических недостатков кожи.</p>
-                                </div>
+                    <div class="uk-width-1-4@m right-side">
+                        <div>
+                            <div class="item uk-position-relative">
+                                <ul>
+                                    <li>
+                                        <h5>Длительность</h5><span>{{ item.duration }} дней</span>
+                                    </li>
+                                    <li>
+                                        <h5>Стоимость</h5><span>{{ item.price }}</span>
+                                    </li>
+                                </ul>
+                                {#                                <a class="uk-button uk-button-default" href="">Записаться онлайн</a>#}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="uk-width-1-4@m right-side">
-                    <div>
-                        <div class="item uk-position-relative">
-                            <ul>
-                                <li>
-                                    <h5>Длительность</h5><span>5 дней</span>
-                                </li>
-                                <li>
-                                    <h5>Стоимость</h5><span>от 1200 - 3000 за 1приход</span>
-                                </li>
-                            </ul>
-                            <a class="uk-button uk-button-default" href="">Записаться онлайн</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
     <section class="other-step">
@@ -96,47 +64,54 @@
                  uk-height-match="target: &gt; div &gt; .item &gt; .title" uk-grid="">
                 <div>
                     <div class="item"><span>01</span>
-                        <div class="image-wraper uk-cover-container"><img src="img/jpg/l1.jpg" alt="" uk-cover=""></div>
+                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l1.jpg' %}" alt=""
+                                                                          uk-cover=""></div>
                         <div class="title uk-flex-middle uk-flex">
                             <h3>Диагностика и консультации</h3>
                         </div>
-                        <a class="uk-button uk-button-default" href="">Подробнее</a>
+                        <a class="uk-button uk-button-default" href="{% url 'service_view' slug='consulting' %}">Подробнее</a>
                     </div>
                 </div>
                 <div>
                     <div class="item"><span>02</span>
-                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l2.jpg' %}" alt="" uk-cover=""></div>
+                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l2.jpg' %}" alt=""
+                                                                          uk-cover=""></div>
                         <div class="title uk-flex-middle uk-flex">
                             <h3>Косметология и эстетическая медицина</h3>
                         </div>
-                        <a class="uk-button uk-button-default" href="">Подробнее</a>
+                        <a class="uk-button uk-button-default"
+                           href="{% url 'service_view' slug='medicine' %}">Подробнее</a>
                     </div>
                 </div>
                 <div>
                     <div class="item"><span>03</span>
-                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l3.jpg' %}" alt="" uk-cover=""></div>
+                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l3.jpg' %}" alt=""
+                                                                          uk-cover=""></div>
                         <div class="title uk-flex-middle uk-flex">
                             <h3>SPA терапия</h3>
                         </div>
-                        <a class="uk-button uk-button-default" href="">Подробнее</a>
+                        <a class="uk-button uk-button-default" href="{% url 'service_view' slug='spa' %}">Подробнее</a>
                     </div>
                 </div>
                 <div>
                     <div class="item"><span>04</span>
-                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l4.jpg' %}" alt="" uk-cover=""></div>
+                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l4.jpg' %}" alt=""
+                                                                          uk-cover=""></div>
                         <div class="title uk-flex-middle uk-flex">
                             <h3>Банный SPA</h3>
                         </div>
-                        <a class="uk-button uk-button-default" href="">Подробнее</a>
+                        <a class="uk-button uk-button-default"
+                           href="{% url 'service_view' slug='bath_spa' %}">Подробнее</a>
                     </div>
                 </div>
                 <div>
                     <div class="item"><span>05</span>
-                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l5.jpg' %}" alt="" uk-cover=""></div>
+                        <div class="image-wraper uk-cover-container"><img src="{% static 'img/jpg/l5.jpg' %}" alt=""
+                                                                          uk-cover=""></div>
                         <div class="title uk-flex-middle uk-flex">
                             <h3>Арт и Бьюти студия</h3>
                         </div>
-                        <a class="uk-button uk-button-default" href="">Подробнее</a>
+                        <a class="uk-button uk-button-default" href="{% url 'service_view' slug='art_beauty' %}">Подробнее</a>
                     </div>
                 </div>
             </div>

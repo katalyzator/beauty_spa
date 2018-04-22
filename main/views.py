@@ -10,7 +10,7 @@ gallery = Gallery.objects.all()
 licenses = License.objects.all()
 reviews = Review.objects.filter(is_active=True)
 partners = Partner.objects.all()
-services = Service.objects.all()
+# services = Service.objects.all()
 certificates = DiscountCertificate.objects.all()
 cards = DiscountCard.objects.all()
 
@@ -29,7 +29,6 @@ def index_view(request):
 
 
 def about_view(request):
-
     context = {
         "members": members
     }
@@ -86,9 +85,29 @@ def review_view(request):
     return render(request, template, context)
 
 
-def service_view(request):
+def service_view(request, slug):
+    services = Service.objects.filter(category=slug)
+
+    page_title = ''
+
+    if slug == 'consulting':
+        page_title = "Диагностика и консультации"
+
+    if slug == 'medicine':
+        page_title = "Косметология и эстетическая медицина"
+
+    if slug == 'spa':
+        page_title = "SPA терапия"
+
+    if slug == 'bath_spa':
+        page_title = "Банный SPA"
+
+    if slug == 'art_beauty':
+        page_title = "Арт и Бьюти студия"
+
     context = {
-        "services": services
+        "services": services,
+        "page_title": page_title
     }
     template = 'service.html'
 
