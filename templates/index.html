@@ -31,12 +31,9 @@
     <section class="sponsor">
         <div class="uk-container">
             <div class="uk-grid uk-child-width-1-6@m uk-child-width-1-2@s uk-flex-middle" uk-grid="">
-                <div class="uk-text-center"><img src="{% static 'img/png/l1.png' %}" alt=""></div>
-                <div class="uk-text-center"><img src="{% static 'img/png/l2.png' %}" alt=""></div>
-                <div class="uk-text-center"><img src="{% static 'img/png/l3.png' %}" alt=""></div>
-                <div class="uk-text-center"><img src="{% static 'img/png/l4.png' %}" alt=""></div>
-                <div class="uk-text-center"><img src="{% static 'img/png/l5.png' %}" alt=""></div>
-                <div class="uk-text-center"><img src="{% static 'img/png/l6.png' %}" alt=""></div>
+                {% for item in partners %}
+                    <div class="uk-text-center"><img src="{{ item.logo.url }}" alt=""></div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -50,7 +47,8 @@
                     <div class="title uk-flex-middle uk-flex">
                         <h3>Диагностика и консультации</h3>
                     </div>
-                    <a class="uk-button uk-button-default" href="">Подробнее</a>
+                    <a class="uk-button uk-button-default"
+                       href="{% url 'service_view' slug='consulting' %}">Подробнее</a>
                 </div>
             </div>
             <div>
@@ -60,7 +58,7 @@
                     <div class="title uk-flex-middle uk-flex">
                         <h3>Косметология и эстетическая медицина</h3>
                     </div>
-                    <a class="uk-button uk-button-default" href="">Подробнее</a>
+                    <a class="uk-button uk-button-default" href="{% url 'service_view' slug='medicine' %}">Подробнее</a>
                 </div>
             </div>
             <div>
@@ -70,7 +68,7 @@
                     <div class="title uk-flex-middle uk-flex">
                         <h3>SPA терапия</h3>
                     </div>
-                    <a class="uk-button uk-button-default" href="">Подробнее</a>
+                    <a class="uk-button uk-button-default" href="{% url 'service_view' slug='spa' %}">Подробнее</a>
                 </div>
             </div>
             <div>
@@ -80,7 +78,7 @@
                     <div class="title uk-flex-middle uk-flex">
                         <h3>Банный SPA</h3>
                     </div>
-                    <a class="uk-button uk-button-default" href="">Подробнее</a>
+                    <a class="uk-button uk-button-default" href="{% url 'service_view' slug='bath_spa' %}">Подробнее</a>
                 </div>
             </div>
             <div>
@@ -90,7 +88,8 @@
                     <div class="title uk-flex-middle uk-flex">
                         <h3>Арт и Бьюти студия</h3>
                     </div>
-                    <a class="uk-button uk-button-default" href="">Подробнее</a>
+                    <a class="uk-button uk-button-default"
+                       href="{% url 'service_view' slug='art_beauty' %}">Подробнее</a>
                 </div>
             </div>
         </div>

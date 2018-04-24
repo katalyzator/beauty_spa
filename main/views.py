@@ -21,7 +21,8 @@ def index_view(request):
         "members": members,
         "reviews": reviews,
         "gallery": gallery,
-        "sliders": slider
+        "sliders": slider,
+        "partners": partners
     }
     template = 'index.html'
 
