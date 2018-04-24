@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 from main.models import *
 
@@ -13,6 +15,22 @@ partners = Partner.objects.all()
 # services = Service.objects.all()
 certificates = DiscountCertificate.objects.all()
 cards = DiscountCard.objects.all()
+
+
+@csrf_exempt
+def post_application(request):
+    try:
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        phone_number = request.POST.get('phone_number')
+        email = request.POST.get('email')
+
+        Application.objects.create(first_name=first_name, last_name=last_name, phone_number=phone_number, email=email)
+
+        return JsonResponse(dict(message="Success"))
+
+    except:
+        return HttpResponse(status=403)
 
 
 def index_view(request):

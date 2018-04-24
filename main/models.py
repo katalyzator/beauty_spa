@@ -171,3 +171,17 @@ class Slider(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class Application(models.Model):
+    first_name = models.CharField(max_length=255, verbose_name='Имя')
+    last_name = models.CharField(max_length=255, verbose_name='Фамилия')
+    phone_number = models.CharField(max_length=255, verbose_name='Номер телефона')
+    email = models.EmailField(verbose_name='Email')
+
+    class Meta:
+        verbose_name_plural = 'Заявки с сайта'
+        verbose_name = 'заявку'
+
+    def __unicode__(self):
+        return smart_unicode(self.first_name)

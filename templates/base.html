@@ -324,5 +324,26 @@
 </div>
 <script src="{% static 'js/libs.min.js' %}"></script>
 <script src="{% static 'js/common.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $("#idForm").submit(function (e) {
+            e.preventDefault();
+
+            var url = $("#idForm").attr('action'); // the script where you handle the form input.
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#idForm").serialize(), // serializes the form's elements.
+                success: function (data) {
+                    alert("Заявка успешно отправлена!") // show response from the php script.
+                }
+            });
+
+             // avoid to execute the actual submit of the form.
+        });
+    });
+
+</script>
 </body>
 </html>

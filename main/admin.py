@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from main.models import Member, Review, Service, DiscountCertificate, DiscountCard, Partner, Gallery, License, Slider
+from main.models import Member, Review, Service, DiscountCertificate, DiscountCard, Partner, Gallery, License, Slider, \
+    Application
 
 admin.site.site_header = 'Панель управления Beauty Spa'
 
@@ -68,6 +69,7 @@ class SliderAdmin(admin.ModelAdmin):
         model = Slider
 
 
+admin.site.register(Application)
 admin.site.register(Slider, SliderAdmin)
 admin.site.register(License, LicenseAdmin)
 admin.site.register(Gallery, GalleryAdmin)

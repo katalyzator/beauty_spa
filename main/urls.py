@@ -19,4 +19,5 @@ urlpatterns = [
     url(r'^special_offers/$', special_offers, name='special_offers'),
     url(r'^kitchen/$', kitchen_view, name='kitchen_view'),
     url(r'^all_services/$', all_service_view, name='all_service_view'),
+    url(r'^post_application/$', post_application, name='post_application'),
 ]
