@@ -8,11 +8,11 @@
     <section class="banner-top uk-background-cover uk-text-center uk-panel uk-flex uk-flex-center uk-flex-middle"
              style="background-image: url({% static 'img/jpg/bot.jpg' %});">
         <div>
-{#            <ul class="uk-breadcrumb">#}
-{#                <li><a href="">название страницы </a></li>#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><span>название страницы</span></li>#}
-{#            </ul>#}
+            {#            <ul class="uk-breadcrumb">#}
+            {#                <li><a href="">название страницы </a></li>#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><span>название страницы</span></li>#}
+            {#            </ul>#}
             <h1>Лицензии</h1>
         </div>
     </section>
@@ -25,30 +25,11 @@
                     SPA» – это процесс двусторонний, рассмотрим основные «права и обязанности» клиентов.</p>
             </div>
             <div class="uk-grid uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid="">
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}" alt=""></div>
-                </div>
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}" alt=""></div>
-                </div>
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}" alt=""></div>
-                </div>
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}" alt=""></div>
-                </div>
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}" alt=""></div>
-                </div>
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}g" alt=""></div>
-                </div>
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}" alt=""></div>
-                </div>
-                <div>
-                    <div class="item"><img src="{% static 'img/jpg/lic.jpg' %}" alt=""></div>
-                </div>
+                {% for item in licenses %}
+                    <div>
+                        <div class="item"><img src="{{ item.image.url }}" alt=""></div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
