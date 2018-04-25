@@ -98,7 +98,7 @@ def public_view(request):
 
 
 def review_view(request):
-    context = {}
+    context = {"reviews": reviews}
     template = 'revius.html'
 
     return render(request, template, context)
