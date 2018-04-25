@@ -78,6 +78,8 @@ class DiscountCertificate(models.Model):
     is_active = models.BooleanField(default=False, verbose_name='Активность',
                                     help_text='Поставьте галочку, чтобы вывести на сайте')
 
+    image = models.ImageField(upload_to='images/certificate_images', verbose_name='Image')
+
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
@@ -96,6 +98,8 @@ class DiscountCard(models.Model):
     price = models.CharField(max_length=255, verbose_name='Цена')
     is_active = models.BooleanField(default=False, verbose_name='Активность',
                                     help_text='Поставьте галочку, чтобы вывести на сайте')
+
+    image = models.ImageField(upload_to='images/certificate_images', verbose_name='Image')
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
