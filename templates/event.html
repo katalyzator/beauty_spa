@@ -7,11 +7,11 @@
     <section class="banner-top uk-background-cover uk-text-center uk-panel uk-flex uk-flex-center uk-flex-middle"
              style="background-image: url({% static 'img/jpg/event.jpg' %});">
         <div>
-{#            <ul class="uk-breadcrumb">#}
-{#                <li><a href="">название страницы </a></li>#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><span>название страницы</span></li>#}
-{#            </ul>#}
+            {#            <ul class="uk-breadcrumb">#}
+            {#                <li><a href="">название страницы </a></li>#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><span>название страницы</span></li>#}
+            {#            </ul>#}
             <h1>События и Новости</h1>
         </div>
     </section>
@@ -21,72 +21,38 @@
                 <div class="uk-width-expand@m left-side">
                     <div>
                         <h3 class="title">События</h3>
-                        <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-child-width-1-2@s" uk-grid="">
-                            <div class="uk-card-media-left uk-cover-container"><img
-                                    src="{% static 'img/jpg/pre1.jpg' %}" alt=""
-                                    uk-cover="">
-                                <canvas width="" height=""></canvas>
-                            </div>
-                            <div>
-                                <div class="uk-card-body"><span>21 марта 2018г</span>
-                                    <h3 class="uk-card-title">Презентация новейшего аппарата</h3>
-                                    <p>17 ноября 2017 года прошла презентация первого в России современного аппарата
-                                        "Лазерная капельница", не имеющая аналогов!</p><a
-                                            class="uk-button uk-button-default" href="">Узнать больше</a>
+                        {% for item in events %}
+                            <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-child-width-1-2@s"
+                                 uk-grid="">
+                                <div class="uk-card-media-left uk-cover-container"><img
+                                        src="{% static 'img/jpg/pre1.jpg' %}" alt=""
+                                        uk-cover="">
+                                    <canvas width="" height=""></canvas>
+                                </div>
+                                <div>
+                                    <div class="uk-card-body"><span>{{ item.start_date|date:"M d, Y" }}</span>
+                                        <h3 class="uk-card-title">{{ item.title }}</h3>
+                                        <p>{{ item.description }}</p><a
+                                                class="uk-button uk-button-default" href="">Узнать больше</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="uk-card uk-card-default uk-grid-collapse uk-margin uk-child-width-1-2@s" uk-grid="">
-                            <div class="uk-card-media-left uk-cover-container"><img src="{% static 'img/jpg/gal.jpg' %}"
-                                                                                    alt=""
-                                                                                    uk-cover="">
-                                <canvas width="" height=""></canvas>
-                            </div>
-                            <div>
-                                <div class="uk-card-body"><span>21 марта 2018г</span>
-                                    <h3 class="uk-card-title">Презентация новейшего аппарата</h3>
-                                    <p>17 ноября 2017 года прошла презентация первого в России современного аппарата
-                                        "Лазерная капельница", не имеющая аналогов!</p>
-                                    <p>17 ноября 2017 года прошла презентация первого в России современного аппарата
-                                        "Лазерная капельница", не имеющая аналогов!</p><a
-                                            class="uk-button uk-button-default" href="">Узнать больше</a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                         <div class="pagination"><a class="active" href="">1</a><a href="">2</a><a href="">3</a></div>
                     </div>
                 </div>
                 <div class="uk-width-1-4@m right-side">
                     <div>
                         <h3 class="title">Новости</h3>
-                        <div class="item uk-position-relative uk-margin"><a class="uk-position-cover" href=""></a>
-                            <div class="uk-flex-top uk-grid-small" uk-grid="">
-                                <div class="uk-width-2-3"><span>21 марта 2018 г</span>
-                                    <h5>Опыт профессиональной подготовки персонала в индустрии гостеприимства</h5>
+                        {% for item in news %}
+                            <div class="item uk-position-relative uk-margin"><a class="uk-position-cover" href=""></a>
+                                <div class="uk-flex-top uk-grid-small" uk-grid="">
+                                    <div class="uk-width-2-3"><span>{{ item.timestamp|date:"M d, Y" }}г</span>
+                                        <h5>{{ item.title }}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item uk-position-relative uk-margin"><a class="uk-position-cover" href=""></a>
-                            <div class="uk-flex-top uk-grid-small" uk-grid="">
-                                <div class="uk-width-2-3"><span>21 марта 2018 г</span>
-                                    <h5>Опыт профессиональной подготовки персонала в индустрии гостеприимства</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item uk-position-relative uk-margin"><a class="uk-position-cover" href=""></a>
-                            <div class="uk-flex-top uk-grid-small" uk-grid="">
-                                <div class="uk-width-2-3"><span>21 марта 2018 г</span>
-                                    <h5>Опыт профессиональной подготовки персонала в индустрии гостеприимства</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item uk-position-relative uk-margin"><a class="uk-position-cover" href=""></a>
-                            <div class="uk-flex-top uk-grid-small" uk-grid="">
-                                <div class="uk-width-2-3"><span>21 марта 2018 г</span>
-                                    <h5>Опыт профессиональной подготовки персонала в индустрии гостеприимства</h5>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                         <div class="uk-margin-medium uk-text-center see-more"><a class="uk-button uk-button-default"
                                                                                  href=""><span class="icon"
                                                                                                uk-icon="icon: refresh"></span><span>Загрузить еще</span></a>

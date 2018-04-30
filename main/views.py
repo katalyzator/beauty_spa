@@ -92,7 +92,9 @@ def information_view(request):
 
 
 def public_view(request):
-    context = {}
+    publics = Publication.objects.all()
+    presses = Press.objects.all()
+    context = {"publics": publics, "presses": presses}
     template = 'publick.html'
 
     return render(request, template, context)
@@ -142,7 +144,9 @@ def eticket_view(request):
 
 
 def event_view(request):
-    context = {}
+    events = Event.objects.all()
+    news = News.objects.all()
+    context = {"events": events, "news": news}
     template = 'event.html'
 
     return render(request, template, context)
