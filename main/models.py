@@ -183,9 +183,29 @@ class Application(models.Model):
     phone_number = models.CharField(max_length=255, verbose_name='Номер телефона')
     email = models.EmailField(verbose_name='Email')
 
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
     class Meta:
         verbose_name_plural = 'Заявки с сайта'
         verbose_name = 'заявку'
 
     def __unicode__(self):
         return smart_unicode(self.first_name)
+
+
+class Bootick(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Название')
+    description = models.TextField(verbose_name='Описание')
+    image = models.ImageField(upload_to='images/botick_images', verbose_name='Картинка')
+    price = models.CharField(max_length=255, verbose_name='Цена')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Бутик'
+        verbose_name = 'Объект'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
