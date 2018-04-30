@@ -3,8 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from main.models import Member, Review, Service, DiscountCertificate, DiscountCard, Partner, Gallery, License, Slider, \
-    Application, Bootick
+from main.models import *
 
 admin.site.site_header = 'Панель управления Beauty Spa'
 
@@ -74,6 +73,30 @@ class BootickAdmin(admin.ModelAdmin):
         model = Bootick
 
 
+class EventAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Event
+
+
+class NewsAdmin(admin.ModelAdmin):
+    class Meta:
+        model = News
+
+
+class PublicationAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Publication
+
+
+class PressAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Press
+
+
+admin.site.register(Publication, PublicationAdmin)
+admin.site.register(Press, PressAdmin)
+admin.site.register(News, NewsAdmin)
+admin.site.register(Event, EventAdmin)
 admin.site.register(Bootick, BootickAdmin)
 admin.site.register(Application)
 admin.site.register(Slider, SliderAdmin)

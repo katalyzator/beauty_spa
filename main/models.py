@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
 from django.utils.encoding import smart_unicode
 
@@ -216,3 +217,65 @@ class Event(models.Model):
     description = models.TextField(verbose_name='Описание')
     start_date = models.DateField(verbose_name='Дата проведения')
 
+    text = RichTextUploadingField(verbose_name='Контент события')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'События'
+        verbose_name = 'Событие'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
+
+
+class News(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    description = models.TextField(verbose_name='Описание')
+
+    text = RichTextUploadingField(verbose_name='Контент новости')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Новости'
+        verbose_name = 'Новость'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
+
+
+class Publication(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    description = models.TextField(verbose_name='Описание')
+
+    text = RichTextUploadingField(verbose_name='Контент Публикации')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Публикации'
+        verbose_name = 'Публикацию'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
+
+
+class Press(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    description = models.TextField(verbose_name='Описание')
+
+    text = RichTextUploadingField(verbose_name='Контент Прессы')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Пресса'
+        verbose_name = 'Прессу'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
