@@ -209,3 +209,10 @@ class Bootick(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Заголовок')
+    description = models.TextField(verbose_name='Описание')
+    start_date = models.DateField(verbose_name='Дата проведения')
+
