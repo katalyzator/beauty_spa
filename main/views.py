@@ -68,7 +68,8 @@ def gallery_view(request):
 
 
 def bootick_view(request):
-    context = {}
+    bootick = Bootick.objects.all()
+    context = {"booticks": bootick}
     template = 'bootick.html'
 
     return render(request, template, context)

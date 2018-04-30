@@ -7,107 +7,39 @@
     <section class="banner-top uk-background-cover uk-text-center uk-panel uk-flex uk-flex-center uk-flex-middle"
              style="background-image: url({% static 'img/jpg/bot.jpg' %});">
         <div>
-{#            <ul class="uk-breadcrumb">#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><span>название страницы</span></li>#}
-{#            </ul>#}
+            {#            <ul class="uk-breadcrumb">#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><span>название страницы</span></li>#}
+            {#            </ul>#}
             <h1>Косметический бутик </h1>
         </div>
     </section>
     <section class="bootick">
         <div class="uk-container">
-            <div class="uk-flex uk-margin-medium-bottom uk-flex-around uk-flex-between@m uk-flex-middle">
-                <div class="controll"><a class="active" href="">Вся продукиця</a><a href="">Thalion</a><a href="">Salin
-                    de Biosel</a><a href="">Comfort Zone</a><a href="">Cipirica</a><a href="">Gehwol</a></div>
-                <div><span>Более<b>140 продукции</b></span></div>
-            </div>
+            {#            <div class="uk-flex uk-margin-medium-bottom uk-flex-around uk-flex-between@m uk-flex-middle">#}
+            {#                <div class="controll"><a class="active" href="">Вся продукиця</a><a href="">Thalion</a><a href="">Salin#}
+            {#                    de Biosel</a><a href="">Comfort Zone</a><a href="">Cipirica</a><a href="">Gehwol</a></div>#}
+            {#                <div><span>Более<b>140 продукции</b></span></div>#}
+            {#            </div>#}
             <div class="uk-grid uk-grid-small uk-child-width-1-4@m uk-child-width-1-2@s " uk-grid=""
                  uk-height-match="target: &gt; div &gt; div &gt; div &gt; div &gt; h4">
-                <div>
-                    <div class="item">
-                        <div class="uk-card uk-card-default uk-box-shadow-hover-large">
-                            <div class="uk-card-media-top">
-                                <div class="image"><img src="{% static 'img/png/tovar.png' %}" alt=""></div>
-                            </div>
-                            <div class="uk-card-body uk-text-center">
-                                <h3 class="uk-card-brand">Thalion</h3>
-                                <h4 class="uk-card-title">Крем для загара Крем для загара Крем для загара</h4><strong>1500
-                                сом</strong><a class="uk-button uk-button-default" href="">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <div class="uk-card uk-card-default uk-box-shadow-hover-large">
-                            <div class="uk-card-media-top">
-                                <div class="image"><img src="{% static 'img/png/tovar.png' %}" alt=""></div>
-                            </div>
-                            <div class="uk-card-body uk-text-center">
-                                <h3 class="uk-card-brand">Thalion</h3>
-                                <h4 class="uk-card-title">Крем для загара</h4><strong>1500 сом</strong><a
-                                    class="uk-button uk-button-default" href="">Подробнее</a>
+                {% for item in booticks %}
+                    <div>
+                        <div class="item">
+                            <div class="uk-card uk-card-default uk-box-shadow-hover-large">
+                                <div class="uk-card-media-top">
+                                    <div class="image"><img src="{{ item.image.url }}" alt=""></div>
+                                </div>
+                                <div class="uk-card-body uk-text-center">
+                                    <h3 class="uk-card-brand">{{ item.title }}</h3>
+                                    <h4 class="uk-card-title">{{ item.description|truncatewords:5 }}</h4>
+                                    <strong>{{ item.price }}</strong><a class="uk-button uk-button-default" href="">Подробнее</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <div class="uk-card uk-card-default uk-box-shadow-hover-large">
-                            <div class="uk-card-media-top">
-                                <div class="image"><img src="{% static 'img/png/tovar.png' %}" alt=""></div>
-                            </div>
-                            <div class="uk-card-body uk-text-center">
-                                <h3 class="uk-card-brand">Thalion</h3>
-                                <h4 class="uk-card-title">Крем для загара</h4><strong>1500 сом</strong><a
-                                    class="uk-button uk-button-default" href="">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <div class="uk-card uk-card-default uk-box-shadow-hover-large">
-                            <div class="uk-card-media-top">
-                                <div class="image"><img src="{% static 'img/png/tovar.png' %}" alt=""></div>
-                            </div>
-                            <div class="uk-card-body uk-text-center">
-                                <h3 class="uk-card-brand">Thalion</h3>
-                                <h4 class="uk-card-title">Крем для загара</h4><strong>1500 сом</strong><a
-                                    class="uk-button uk-button-default" href="">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <div class="uk-card uk-card-default uk-box-shadow-hover-large">
-                            <div class="uk-card-media-top">
-                                <div class="image"><img src="{% static 'img/png/tovar.png' %}" alt=""></div>
-                            </div>
-                            <div class="uk-card-body uk-text-center">
-                                <h3 class="uk-card-brand">Thalion</h3>
-                                <h4 class="uk-card-title">Крем для загара</h4><strong>1500 сом</strong><a
-                                    class="uk-button uk-button-default" href="">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="item">
-                        <div class="uk-card uk-card-default uk-box-shadow-hover-large">
-                            <div class="uk-card-media-top">
-                                <div class="image"><img src="{% static 'img/png/tovar.png' %}" alt=""></div>
-                            </div>
-                            <div class="uk-card-body uk-text-center">
-                                <h3 class="uk-card-brand">Thalion</h3>
-                                <h4 class="uk-card-title">Крем для загара</h4><strong>1500 сом</strong><a
-                                    class="uk-button uk-button-default" href="">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="uk-margin-medium uk-text-center see-more"><a class="uk-button uk-button-default" href=""><span
                     class="icon" uk-icon="icon: refresh"></span><span>Загрузить еще</span></a></div>
