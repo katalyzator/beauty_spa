@@ -18,7 +18,7 @@
                     <li class="uk-visible@l"><a href="{% url 'certificate_view' %}">spa сертификаты</a></li>
                     <li class="uk-text-center button uk-visible@m">
                         <div><a href="tel: +996 (555) 310 320">+996 312 979 777</a></div>
-{#                        <div class="call-back"><a class="uk-button-default" href="">Записаться онлайн</a></div>#}
+                        {#                        <div class="call-back"><a class="uk-button-default" href="">Записаться онлайн</a></div>#}
                     </li>
                 </ul>
             </div>
@@ -44,10 +44,10 @@
                 </ul>
                 <h5>Услуги</h5>
                 <ul class="uk-nav uk-nav-default">
-                    <li><a href="">Диагностика и консультации</a></li>
-                    <li><a href="">SPA –уходы за телом</a></li>
-                    <li><a href="">Косметология и эстетическая медицина</a></li>
-                    <li><a href="">Art&Beauty студия</a></li>
+                    <li><a href="{% url 'service_view' slug='consulting' %}">Диагностика и консультации</a></li>
+                    <li><a href="{% url 'service_view' slug='spa' %}">SPA –уходы за телом</a></li>
+                    <li><a href="{% url 'service_view' slug='medicine' %}">Косметология и эстетическая медицина</a></li>
+                    <li><a href="{% url 'service_view' slug='art_beauty' %}">Art&Beauty студия</a></li>
                 </ul>
                 <h5>Другие разделы</h5>
                 <ul class="uk-nav uk-nav-default">

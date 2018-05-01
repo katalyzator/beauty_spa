@@ -54,10 +54,10 @@
             <div>
                 <h5>Услуги</h5>
                 <ul>
-                    <li><a href="">Диагностика и консультации</a></li>
-                    <li><a href="">SPA –уходы за телом</a></li>
-                    <li><a href="">Косметология и эстетическая медицина</a></li>
-                    <li><a href="">Art&Beauty студия</a></li>
+                    <li><a href="{% url 'service_view' slug='consulting' %}">Диагностика и консультации</a></li>
+                    <li><a href="{% url 'service_view' slug='spa' %}">SPA –уходы за телом</a></li>
+                    <li><a href="{% url 'service_view' slug='medicine' %}">Косметология и эстетическая медицина</a></li>
+                    <li><a href="{% url 'service_view' slug='art_beauty' %}">Art&Beauty студия</a></li>
                 </ul>
             </div>
             <div>
@@ -73,7 +73,8 @@
                 <h5>Контакты</h5>
                 <ul>
                     <li>Почта: Wolrdclass@gmail.com</li>
-                    <li>Телефон: +996 312 979 667</li>
+                    <li>Телефон #1: +996 312 979 667</li>
+                    <li>Телефон #2: +996 312 979 777</li>
                     <li>Адрес: г. Бишкек, ул. Жукеева-Пудовкина, 87/2</li>
                 </ul>
             </div>
