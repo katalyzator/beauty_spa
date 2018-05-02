@@ -7,14 +7,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 from main.models import *
 
-members = Member.objects.all()
 
-licenses = License.objects.all()
-reviews = Review.objects.filter(is_active=True)
-partners = Partner.objects.all()
 # services = Service.objects.all()
-certificates = DiscountCertificate.objects.all()
-cards = DiscountCard.objects.all()
+
 
 
 @csrf_exempt
@@ -34,8 +29,11 @@ def post_application(request):
 
 
 def index_view(request):
+    reviews = Review.objects.filter(is_active=True)
     gallery = Gallery.objects.all()
     slider = Slider.objects.all()
+    partners = Partner.objects.all()
+    members = Member.objects.all()
     context = {
         "members": members,
         "reviews": reviews,
@@ -49,6 +47,7 @@ def index_view(request):
 
 
 def about_view(request):
+    members = Member.objects.all()
     context = {
         "members": members
     }
@@ -78,6 +77,7 @@ def bootick_view(request):
 
 
 def license_view(request):
+    licenses = License.objects.all()
     context = {
         "licenses": licenses
     }
@@ -103,6 +103,7 @@ def public_view(request):
 
 
 def review_view(request):
+    reviews = Review.objects.filter(is_active=True)
     context = {"reviews": reviews}
     template = 'revius.html'
 
@@ -155,6 +156,8 @@ def event_view(request):
 
 
 def certificate_view(request):
+    certificates = DiscountCertificate.objects.all()
+    cards = DiscountCard.objects.all()
     context = {
         "certificates": certificates,
         "cards": cards
@@ -165,6 +168,7 @@ def certificate_view(request):
 
 
 def partner_view(request):
+    partners = Partner.objects.all()
     context = {
         "partners": partners
     }

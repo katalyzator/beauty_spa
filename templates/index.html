@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}
+{% load staticfiles thumbnail %}
 
 {% block content %}
     <section class="home-slider uk-grid uk-grid-collapse uk-position-relative uk-child-width-1-2@m"
@@ -13,7 +13,7 @@
                             <div>
                                 <h2>{{ item.title }}</h2>
                                 <p>{{ item.description }}</p>
-{#                                <a class="uk-button uk-button-default" href="">Подробнее</a>#}
+                                {#                                <a class="uk-button uk-button-default" href="">Подробнее</a>#}
                             </div>
                         </div>
                     </div>
@@ -264,9 +264,11 @@
                         {% for item in members %}
                             <div>
                                 <div class="item"><a class="uk-position-cover" href=""></a>
-                                    <div class="image-wrapper uk-cover-container"><img
-                                            src="{{ item.image.url }}" alt=""
-                                            uk-cover=""></div>
+                                    <div class="image-wrapper uk-cover-container">
+                                        {% thumbnail item.image "270x300" as im %}
+                                            <img src="{{ im.url }}" alt="" uk-cover="">
+                                        {% endthumbnail %}
+                                    </div>
                                     <div class="text-block">
                                         <div class="uk-margin">
                                             <h6>{{ item.profession }}</h6>
@@ -306,9 +308,11 @@
                                     <div class="item uk-padding-large">
                                         <ul class="uk-subnav uk-subnav-pill uk-child-width-1-3"
                                             uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
-                                            <li><a class="uk-cover-container" href="#"><img
-                                                    src="{{ item.image.url }}" alt=""
-                                                    uk-cover=""></a></li>
+                                            <li><a class="uk-cover-container" href="#">
+                                                {% thumbnail item.image "187x120" as im %}
+                                                    <img src="{{ im.url }}" alt="" uk-cover="">
+                                                {% endthumbnail %}
+                                            </a></li>
                                         </ul>
                                         <ul class="uk-switcher">
                                             <li><b>{{ item.full_name }}</b>
