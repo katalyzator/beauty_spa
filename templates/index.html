@@ -319,11 +319,11 @@
                                     <div class="item uk-padding-large">
                                         <ul class="uk-subnav uk-subnav-pill uk-child-width-1-3"
                                             uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
-                                            <li><a class="uk-cover-container" href="#">
+                                            <li>
                                                 {% thumbnail item.image "187x120" as im %}
                                                     <img src="{{ im.url }}" alt="" uk-cover="">
                                                 {% endthumbnail %}
-                                            </a></li>
+                                            </li>
                                         </ul>
                                         <ul class="uk-switcher">
                                             <li><b>{{ item.full_name }}</b>
