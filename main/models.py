@@ -217,6 +217,7 @@ class Event(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
     start_date = models.DateField(verbose_name='Дата проведения')
+    image = models.ImageField(upload_to='images/press_images', verbose_name='Картинка')
 
     text = RichTextUploadingField(verbose_name='Контент события')
 
@@ -234,6 +235,7 @@ class Event(models.Model):
 class News(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
+    image = models.ImageField(upload_to='images/press_images', verbose_name='Картинка')
 
     text = RichTextUploadingField(verbose_name='Контент новости')
 
@@ -251,6 +253,7 @@ class News(models.Model):
 class Publication(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
+    image = models.ImageField(upload_to='images/press_images', verbose_name='Картинка')
 
     text = RichTextUploadingField(verbose_name='Контент Публикации')
 
@@ -268,6 +271,7 @@ class Publication(models.Model):
 class Press(models.Model):
     title = models.CharField(max_length=255, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание')
+    image = models.ImageField(upload_to='images/press_images', verbose_name='Картинка')
 
     text = RichTextUploadingField(verbose_name='Контент Прессы')
 
