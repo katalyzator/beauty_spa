@@ -47,7 +47,7 @@
                                 <div class="text"><span>{{ item.tag }}</span>
                                     <h4>{{ item.description|truncatechars:200 }}</h4><a
                                             class="uk-button uk-button-default"
-                                            href="">Узнать больше</a>
+                                            href="" uk-toggle="target: #modal-form">Узнать больше</a>
                                 </div>
                             </li>
                         {% endfor %}
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="text"><span>{{ item.tag }}</span>
                                     <h4>{{ item.description|truncatechars:200 }}</h4><a
-                                            class="uk-button uk-button-default" href="">Узнать больше</a>
+                                            class="uk-button uk-button-default" href="" uk-toggle="target: #modal-form">Узнать больше</a>
                                 </div>
                             </li>
                         {% endfor %}
