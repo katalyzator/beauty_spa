@@ -391,6 +391,24 @@
 
             // avoid to execute the actual submit of the form.
         });
+
+        $("#action-form-ajax").submit(function (e) {
+            e.preventDefault();
+
+            var url = $("#action-form-ajax").attr('action'); // the script where you handle the form input.
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#action-form-ajax").serialize(), // serializes the form's elements.
+                success: function (data) {
+                    document.getElementById("action-form-ajax").reset();
+                    alert("Заявка успешно отправлена!"); // show response from the php script.
+                }
+            });
+
+            // avoid to execute the actual submit of the form.
+        });
     });
 
 </script>

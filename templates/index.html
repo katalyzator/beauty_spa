@@ -174,7 +174,8 @@
                 <div class="item uk-text-center uk-flex uk-flex-middle"
                      uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.5">
                     <div><img src="{% static 'img/png/logo.png' %}" alt="">
-                        <h3>Вы уже решили записаться на прием в SPA?</h3><a class="uk-button uk-button-default" href="">Получить
+                        <h3>Вы уже решили записаться на прием в SPA?</h3><a class="uk-button uk-button-default" href=""
+                                                                            uk-toggle="target: #modal-form">Получить
                             консультацию</a>
                     </div>
                 </div>
@@ -231,18 +232,28 @@
                     </div>
                 </div>
                 <div>
-                    <form>
+                    <form id="action-form-ajax" action="{% url 'post_application' %}" method="post">
                         <fieldset class="uk-fieldset">
                             <div class="uk-margin">
                                 <legend class="uk-legend uk-text-center">Оставьте заявку чтобы <br> участвовать в акции
                                 </legend>
                             </div>
                             <div class="uk-margin-small">
-                                <input class="uk-input" type="text" placeholder="Имя">
+                                <input class="uk-input" type="text" placeholder="Имя" name="first_name" required>
                             </div>
                             <div class="uk-margin-small">
-                                <input class="uk-input phone_us" type="text" placeholder="Телефон">
+                                <input class="uk-input" type="text" placeholder="Фамилия" name="last_name"
+                                       required>
                             </div>
+                            <div class="uk-margin-small">
+                                <input class="uk-input phone_us" type="text" placeholder="Телефон" name="phone_number"
+                                       required>
+                            </div>
+                            <div class="uk-margin-small">
+                                <input class="uk-input" type="text" placeholder="Email" name="email"
+                                       required>
+                            </div>
+
                             <div class="uk-margin">
                                 <p>Все ваши данные конфедициальны</p>
                             </div>
@@ -343,7 +354,8 @@
                 <div class="item uk-text-center uk-flex uk-flex-middle"
                      uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.5">
                     <div><img src="{% static 'img/png/logo.png' %}" alt="">
-                        <h3>Вы уже решили записаться на прием в SPA?</h3><a class="uk-button uk-button-default" href="">Получить
+                        <h3>Вы уже решили записаться на прием в SPA?</h3><a class="uk-button uk-button-default" href=""
+                                                                            uk-toggle="target: #modal-form">Получить
                             консультацию</a>
                     </div>
                 </div>
@@ -391,7 +403,9 @@
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom"><a class="uk-button uk-button-default"
-                                                                                 href="">Подробнее</a></div>
+                                                                                 href=""
+                                                                                 uk-toggle="target: #modal-form">Подробнее</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -474,7 +488,8 @@
                 <h4>Подарочные сертификаты</h4>
                 <p>«Beauty SPA» с удовольствием предлагает Вам свои подарки — подарочные сертификаты с безграничным
                     номиналом и курьерской доставкой в любую точку Бишкека. </p><a class="uk-button uk-button-default"
-                                                                                   href="">Подробнее</a>
+                                                                                   href=""
+                                                                                   uk-toggle="target: #modal-form">Подробнее</a>
             </div>
         </div>
     </section>
