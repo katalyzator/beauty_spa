@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from main.models import *
 
 members = Member.objects.all()
-gallery = Gallery.objects.all()
+
 licenses = License.objects.all()
 reviews = Review.objects.filter(is_active=True)
 partners = Partner.objects.all()
@@ -34,6 +34,7 @@ def post_application(request):
 
 
 def index_view(request):
+    gallery = Gallery.objects.all()
     slider = Slider.objects.all()
     context = {
         "members": members,
@@ -57,6 +58,7 @@ def about_view(request):
 
 
 def gallery_view(request):
+    gallery = Gallery.objects.all()
     # for item in gallery:
     #     print item.type_of_gallery
     context = {
