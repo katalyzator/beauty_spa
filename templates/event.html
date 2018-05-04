@@ -45,7 +45,8 @@
                     <div>
                         <h3 class="title">Новости</h3>
                         {% for item in news %}
-                            <div class="item uk-position-relative uk-margin"><a class="uk-position-cover" href=""></a>
+                            <div class="item uk-position-relative uk-margin"><a class="uk-position-cover"
+                                                                                href="{% url 'single_news' id=item.id %}"></a>
                                 <div class="uk-flex-top uk-grid-small" uk-grid="">
                                     <div class="uk-width-2-3"><span>{{ item.timestamp|date:"M d, Y" }}г</span>
                                         <h5>{{ item.title }}</h5>

@@ -196,3 +196,13 @@ def all_service_view(request):
     template = 'all-service.html'
 
     return render(request, template, context)
+
+
+def news_detail_view(request, id):
+    news = News.objects.get(id=id)
+
+    context = {
+        "object": news
+    }
+
+    return render(request, 'news_inner.html', context)
