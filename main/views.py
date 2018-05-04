@@ -51,9 +51,11 @@ def index_view(request):
 def about_view(request):
     about = About.objects.last()
     members = Member.objects.all()
+    principes = Principe.objects.all()
     context = {
         "members": members,
-        "about": about
+        "about": about,
+        "principes": principes
     }
     template = 'abou_us.html'
 

@@ -302,3 +302,16 @@ class About(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.phone_number_1)
+
+
+class Principe(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Title')
+    image = models.ImageField(upload_to='images/pri_images', verbose_name='Image')
+    description = models.TextField(verbose_name='Описание')
+
+    class Meta:
+        verbose_name_plural = 'Принципы'
+        verbose_name = 'принцип'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
