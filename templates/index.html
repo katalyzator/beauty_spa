@@ -198,7 +198,7 @@
                             <h5>До конца акции осталось</h5>
                             <div>
                                 <div class="uk-grid-small uk-child-width-auto uk-flex-center" uk-grid=""
-                                     uk-countdown="date: {{ promotion.exp_date|date:"Y-d-m" }}T{{ promotion.exp_date|date:"H:M:S" }}+00:00">
+                                     uk-countdown="date: {{ promotion.exp_date|date:"Y-d-m" }}T{{ promotion.exp_date|time:"H:M:S" }}+00:00">
                                     <div>
                                         <div class="uk-countdown-number uk-countdown-days"></div>
                                         <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">
