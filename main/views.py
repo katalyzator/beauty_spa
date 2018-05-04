@@ -29,6 +29,7 @@ def post_application(request):
 
 
 def index_view(request):
+    promotion = Promotion.objects.last()
     about = About.objects.last()
     reviews = Review.objects.filter(is_active=True)
     gallery = Gallery.objects.all()
@@ -41,7 +42,8 @@ def index_view(request):
         "gallery": gallery,
         "sliders": slider,
         "partners": partners,
-        "about": about
+        "about": about,
+        "promotion": promotion
     }
     template = 'index.html'
 

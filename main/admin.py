@@ -103,6 +103,12 @@ class PrincipeAdmin(admin.ModelAdmin):
         model = Principe
 
 
+class PromotionAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Promotion
+
+
+admin.site.register(Promotion, PromotionAdmin)
 admin.site.register(Principe, PrincipeAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Publication, PublicationAdmin)

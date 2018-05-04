@@ -189,16 +189,16 @@
                     <div class="small-action-block uk-flex-inline uk-flex-middle uk-flex-center uk-text-center">
                         <div>
                             <h3>Акция</h3>
-                            <h4>только в течении 24 часов</h4>
+                            <h4>{{ promotion.title }}</h4>
                         </div>
                     </div>
                     <div class="medium-action-block uk-flex-inline uk-flex-middle uk-flex-center uk-text-center">
                         <div>
-                            <p>Запишитесь на <br> моделируйщий массаж <br><span>со скидкой 30%</span></p>
+                            <p>{{ promotion.text|safe }}</p>
                             <h5>До конца акции осталось</h5>
                             <div>
                                 <div class="uk-grid-small uk-child-width-auto uk-flex-center" uk-grid=""
-                                     uk-countdown="date: 2019-04-12T08:41:41+00:00">
+                                     uk-countdown="date: {{ promotion.exp_date }}">
                                     <div>
                                         <div class="uk-countdown-number uk-countdown-days"></div>
                                         <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">

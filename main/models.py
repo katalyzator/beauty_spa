@@ -315,3 +315,20 @@ class Principe(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class Promotion(models.Model):
+    title = models.TextField(verbose_name='Заголовок', help_text='ТОЛЬКО В ТЕЧЕНИИ 24 ЧАСОВ')
+    text = RichTextUploadingField(verbose_name='Контент Акции')
+
+    exp_date = models.DateTimeField(verbose_name='Дата окончания', help_text='Отсчет начнется с текущей времени')
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Акция'
+        verbose_name = 'Акция'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
