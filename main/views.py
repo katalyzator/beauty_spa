@@ -226,3 +226,13 @@ def publick_detail_view(request, id):
     }
 
     return render(request, 'publick_inner.html', context)
+
+
+def event_detail_view(request, id):
+    news = Event.objects.get(id=id)
+
+    context = {
+        "object": news
+    }
+
+    return render(request, 'event_inner.html', context)
