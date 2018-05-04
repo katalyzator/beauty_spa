@@ -216,3 +216,13 @@ def press_detail_view(request, id):
     }
 
     return render(request, 'press_inner.html', context)
+
+
+def publick_detail_view(request, id):
+    news = Publication.objects.get(id=id)
+
+    context = {
+        "object": news
+    }
+
+    return render(request, 'publick_inner.html', context)

@@ -33,7 +33,8 @@
                                     <div class="uk-card-body"><span>{{ item.timestamp|date:"Y d, M" }}</span>
                                         <h3 class="uk-card-title">{{ item.title }}</h3>
                                         <p>{{ item.description }}</p>
-                                        {#                                        <a class="uk-button uk-button-default" href="">Узнать больше</a>#}
+                                        <a class="uk-button uk-button-default"
+                                           href="{% url 'single_public' id=item.id %}">Узнать больше</a>
                                     </div>
                                 </div>
                             </div>

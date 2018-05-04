@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+    <section class="banner-top uk-background-cover uk-text-center uk-panel uk-flex uk-flex-center uk-flex-middle"
+             style="background-image: url({% static 'img/jpg/news.jpg' %});">
+        <div>
+            {#          <ul class="uk-breadcrumb">#}
+            {#            <li><a href="">название страницы</a></li>#}
+            {#            <li><a href="">название страницы</a></li>#}
+            {#            <li><span>название страницы</span></li>#}
+            {#          </ul>#}
+            <h1>{{ object.title }}</h1>
+        </div>
+    </section>
+    <section class="news_inner">
+        <div class="uk-container">
+            <div class="uk-grid uk-grid" uk-grid="">
+                <div class="uk-width-1-4@m left-side">
+                    <div class="uk-margin">
+                        <p>Дата публикации</p><strong>{{ object.timestamp|date:"d M, Y" }}</strong>
+                    </div>
+                    {#                    <div class="uk-margin">#}
+                    {#                        <p>Просмотров</p><strong><i class="fa fa-eye" aria-hidden="true"></i><span>145</span></strong>#}
+                    {#                    </div>#}
+                    {#                    <div class="uk-margin">#}
+                    {#                        <p>Подделиться с друзьями</p><a class="uk-icon-button uk-margin-small-right" href=""><i#}
+                    {#                            class="fa fa-facebook" aria-hidden="true"></i></a><a#}
+                    {#                            class="uk-icon-button uk-margin-small-right" href=""><i class="fa fa-twitter"#}
+                    {#                                                                                    aria-hidden="true"></i></a>#}
+                    {#                    </div>#}
+                </div>
+                <div class="uk-width-expand@m right-side">
+                    <div class="text-block">
+                        {{ object.text|safe }}
+                    </div>
+                    {#                    <div class="slider_news_block">#}
+                    {#                        <h3>Другие новости<a href="">Все новости</a></h3>#}
+                    {#                        <div class="slider_news"#}
+                    {#                             uk-height-match="target: &gt; div &gt; div &gt; div &gt; div &gt; div &gt; h4">#}
+                    {#                            <div class="item">#}
+                    {#                                <div class="uk-card uk-card-default uk-position-relative uk-box-shadow-hover-large"><a#}
+                    {#                                        class="uk-position-cover" href=""></a>#}
+                    {#                                    <div class="uk-card-body uk-padding-small"><span>21 марта 2018г</span>#}
+                    {#                                        <h4 class="uk-card-title">Опыт профессиональной подготовки персонала в индустрии#}
+                    {#                                            гостеприимства</h4>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="uk-card-media-bottom image uk-cover-container"><img#}
+                    {#                                            src="img/jpg/news2.jpg"#}
+                    {#                                            alt="" uk-cover="">#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                            <div class="item">#}
+                    {#                                <div class="uk-card uk-card-default uk-position-relative uk-box-shadow-hover-large"><a#}
+                    {#                                        class="uk-position-cover" href=""></a>#}
+                    {#                                    <div class="uk-card-body uk-padding-small"><span>21 марта 2018г</span>#}
+                    {#                                        <h4 class="uk-card-title">Опыт профессиональной подготовки персонала в индустрии#}
+                    {#                                            гостеприимства</h4>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="uk-card-media-bottom image uk-cover-container"><img#}
+                    {#                                            src="img/jpg/news2.jpg"#}
+                    {#                                            alt="" uk-cover="">#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                            <div class="item">#}
+                    {#                                <div class="uk-card uk-card-default uk-position-relative uk-box-shadow-hover-large"><a#}
+                    {#                                        class="uk-position-cover" href=""></a>#}
+                    {#                                    <div class="uk-card-body uk-padding-small"><span>21 марта 2018г</span>#}
+                    {#                                        <h4 class="uk-card-title">Опыт профессиональной</h4>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="uk-card-media-bottom image uk-cover-container"><img#}
+                    {#                                            src="img/jpg/news2.jpg"#}
+                    {#                                            alt="" uk-cover="">#}
+                    {#                                    </div>#}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                        </div>#}
+                    {#                    </div>#}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
