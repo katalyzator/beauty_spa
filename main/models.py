@@ -284,3 +284,21 @@ class Press(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class About(models.Model):
+    phone_number_1 = models.CharField(max_length=255, verbose_name='Номер телефона 1', blank=True, null=True)
+    phone_number_2 = models.CharField(max_length=255, verbose_name='Номер телефона 2', blank=True, null=True)
+    description = models.TextField(verbose_name='Текст', blank=True, null=True)
+    email = models.EmailField(verbose_name='Email', blank=True, null=True)
+    address = models.CharField(max_length=1000, verbose_name='Адрес', blank=True, null=True)
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'О Нас'
+        verbose_name = 'объект'
+
+    def __unicode__(self):
+        return smart_unicode(self.phone_number_1)
