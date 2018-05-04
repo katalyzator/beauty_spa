@@ -236,3 +236,23 @@ def event_detail_view(request, id):
     }
 
     return render(request, 'event_inner.html', context)
+
+
+def cert_detail_view(request, id):
+    news = DiscountCertificate.objects.get(id=id)
+
+    context = {
+        "object": news
+    }
+
+    return render(request, 'cert_inner.html', context)
+
+
+def card_detail_view(request, id):
+    news = DiscountCard.objects.get(id=id)
+
+    context = {
+        "object": news
+    }
+
+    return render(request, 'card_inner.html', context)

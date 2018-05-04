@@ -21,10 +21,10 @@
                         <div class="uk-margin-small-bottom"><span>Отдел продаж</span></div>
                         <div><b>+996 312 979 777</b></div>
                     </div>
-{#                    <div class="uk-margin"><a class="uk-button uk-button-default" href="">Получить консультацию</a>#}
-                    </div>
+                    {#                    <div class="uk-margin"><a class="uk-button uk-button-default" href="">Получить консультацию</a>#}
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <section class="gift-certificates">
@@ -47,7 +47,7 @@
                                 <div class="text"><span>{{ item.tag }}</span>
                                     <h4>{{ item.description|truncatechars:200 }}</h4><a
                                             class="uk-button uk-button-default"
-                                            href="" uk-toggle="target: #modal-form">Узнать больше</a>
+                                            href="{% url 'single_cert' id=item.id %}">Узнать больше</a>
                                 </div>
                             </li>
                         {% endfor %}
@@ -74,7 +74,9 @@
                                 </div>
                                 <div class="text"><span>{{ item.tag }}</span>
                                     <h4>{{ item.description|truncatechars:200 }}</h4><a
-                                            class="uk-button uk-button-default" href="" uk-toggle="target: #modal-form">Узнать больше</a>
+                                            class="uk-button uk-button-default"
+                                            href="{% url 'single_card' id=item.id %}">Узнать
+                                        больше</a>
                                 </div>
                             </li>
                         {% endfor %}
