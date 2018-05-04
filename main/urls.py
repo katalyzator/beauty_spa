@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^all_services/$', all_service_view, name='all_service_view'),
     url(r'^post_application/$', post_application, name='post_application'),
     url(r'^news/(?P<id>\d+)/$', news_detail_view, name='single_news'),
+    url(r'^pressa/(?P<id>\d+)/$', press_detail_view, name='single_press'),
 ]

@@ -206,3 +206,13 @@ def news_detail_view(request, id):
     }
 
     return render(request, 'news_inner.html', context)
+
+
+def press_detail_view(request, id):
+    news = Press.objects.get(id=id)
+
+    context = {
+        "object": news
+    }
+
+    return render(request, 'press_inner.html', context)
