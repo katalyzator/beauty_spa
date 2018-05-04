@@ -303,7 +303,8 @@
                         class="uk-position-center-right-out uk-position-small" href="#" uk-slidenav-next=""
                         uk-slider-item="next"></a></div>
             </div>
-            <div class="uk-text-center uk-margin"><a class="uk-button uk-button-default" href="">Все специалисты</a>
+            <div class="uk-text-center uk-margin"><a class="uk-button uk-button-default" href="{% url 'about_view' %}">Все
+                специалисты</a>
             </div>
         </div>
     </section>
@@ -403,8 +404,7 @@
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom"><a class="uk-button uk-button-default"
-                                                                                 href=""
-                                                                                 uk-toggle="target: #modal-form">Подробнее</a>
+                                                                                 href="{% url 'kitchen_view' %}">Подробнее</a>
                         </div>
                     </div>
                 </div>
@@ -475,8 +475,7 @@
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom"><a class="uk-button uk-button-default"
-                                                                                 href=""
-                                                                                 uk-toggle="target: #modal-form">Подробнее</a>
+                                                                                 href="{% url 'bootick_view' %}">Подробнее</a>
                         </div>
                     </div>
                 </div>
