@@ -33,7 +33,8 @@
                                     <div class="uk-card-body"><span>{{ item.start_date|date:"M d, Y" }}</span>
                                         <h3 class="uk-card-title">{{ item.title }}</h3>
                                         <p>{{ item.description }}</p><a
-                                                class="uk-button uk-button-default" href="{% url 'single_event' id=item.id %}">Узнать больше</a>
+                                                class="uk-button uk-button-default"
+                                                href="{% url 'single_event' id=item.id %}">Узнать больше</a>
                                     </div>
                                 </div>
                             </div>

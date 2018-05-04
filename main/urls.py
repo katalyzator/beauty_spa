@@ -23,5 +23,5 @@ urlpatterns = [
     url(r'^news/(?P<id>\d+)/$', news_detail_view, name='single_news'),
     url(r'^pressa/(?P<id>\d+)/$', press_detail_view, name='single_press'),
     url(r'^publications/(?P<id>\d+)/$', publick_detail_view, name='single_public'),
-    url(r'^event/(?P<id>\d+)/$', publick_detail_view, name='single_event'),
+    url(r'^event/(?P<id>\d+)/$', event_detail_view, name='single_event'),
 ]
