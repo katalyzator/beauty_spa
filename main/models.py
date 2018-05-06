@@ -53,7 +53,7 @@ class Service(models.Model):
     )
     category = models.CharField(choices=SERVICE_CATEGORY, max_length=255, verbose_name='Выберите категорию')
     title = models.CharField(max_length=300, verbose_name='Название')
-    description = models.TextField(verbose_name='Описание')
+    description = RichTextUploadingField(verbose_name='Описание')
     # duration = models.IntegerField(default=1, verbose_name='Длительность в днях', blank=True, null=True)
     price = models.CharField(max_length=300, verbose_name='Ценообразование',
                              help_text='Пример: (от 1200 - 3000 за 1приход)')
