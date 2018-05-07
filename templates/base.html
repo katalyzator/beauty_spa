@@ -240,7 +240,326 @@
                 font-size: 14px
             }
         }
+
+        .holder {
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            right: 0%;
+            bottom: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: #ECE5DF;
+        }
+
+        .preloader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 400px;
+            transform: translateX(-50%) translateY(-50%) rotateX(-45deg);
+            transform-style: preserve-3d;
+        }
+
+        .preloader .circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .preloader .circles div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0%;
+            top: 0%;
+            transform: translateX(-50%) translateY(-50%);
+            overflow: hidden;
+            animation: rotateCircle 1s infinite linear;
+            transform-origin: 100% 100%;
+        }
+
+        .preloader .circles div:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+
+        .preloader .circles div:nth-child(1) {
+            left: -11%;
+            top: -11%;
+            transform-origin: 111% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.28);
+            animation-duration: 0.9s;
+            z-index: 9;
+            animation-name: rotateCircle1;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(1):before {
+            top: 61%;
+            left: 61%;
+            background-color: #182825;
+        }
+
+        @keyframes rotateCircle1 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.28) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.28) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(2) {
+            left: -7%;
+            top: -7%;
+            transform-origin: 107% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.36);
+            animation-duration: 1s;
+            z-index: 8;
+            animation-name: rotateCircle2;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(2):before {
+            top: 57%;
+            left: 57%;
+            background-color: #2C365E;
+        }
+
+        @keyframes rotateCircle2 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.36) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.36) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(3) {
+            left: -3%;
+            top: -3%;
+            transform-origin: 103% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.44);
+            animation-duration: 1.1s;
+            z-index: 7;
+            animation-name: rotateCircle3;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(3):before {
+            top: 53%;
+            left: 53%;
+            background-color: #1A936F;
+        }
+
+        @keyframes rotateCircle3 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.44) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.44) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(4) {
+            left: 1%;
+            top: 1%;
+            transform-origin: 99% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.52);
+            animation-duration: 1.2s;
+            z-index: 6;
+            animation-name: rotateCircle4;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(4):before {
+            top: 49%;
+            left: 49%;
+            background-color: #F3FFBA;
+        }
+
+        @keyframes rotateCircle4 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.52) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.52) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(5) {
+            left: 5%;
+            top: 5%;
+            transform-origin: 95% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.6);
+            animation-duration: 1.3s;
+            z-index: 5;
+            animation-name: rotateCircle5;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(5):before {
+            top: 45%;
+            left: 45%;
+            background-color: #FF0850;
+        }
+
+        @keyframes rotateCircle5 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.6) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.6) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(6) {
+            left: 9%;
+            top: 9%;
+            transform-origin: 91% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.68);
+            animation-duration: 1.4s;
+            z-index: 4;
+            animation-name: rotateCircle6;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(6):before {
+            top: 41%;
+            left: 41%;
+        }
+
+        @keyframes rotateCircle6 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.68) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.68) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(7) {
+            left: 13%;
+            top: 13%;
+            transform-origin: 87% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.76);
+            animation-duration: 1.5s;
+            z-index: 3;
+            animation-name: rotateCircle7;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(7):before {
+            top: 37%;
+            left: 37%;
+        }
+
+        @keyframes rotateCircle7 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.76) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.76) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(8) {
+            left: 17%;
+            top: 17%;
+            transform-origin: 83% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.84);
+            animation-duration: 1.6s;
+            z-index: 2;
+            animation-name: rotateCircle8;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(8):before {
+            top: 33%;
+            left: 33%;
+        }
+
+        @keyframes rotateCircle8 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.84) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.84) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(9) {
+            left: 21%;
+            top: 21%;
+            transform-origin: 79% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(0.92);
+            animation-duration: 1.7s;
+            z-index: 1;
+            animation-name: rotateCircle9;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(9):before {
+            top: 29%;
+            left: 29%;
+        }
+
+        @keyframes rotateCircle9 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(0.92) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(0.92) rotateZ(360deg);
+            }
+        }
+
+        .preloader .circles div:nth-child(10) {
+            left: 25%;
+            top: 25%;
+            transform-origin: 75% 100%;
+            transform: translateX(-50%) translateY(-50%) scale(1);
+            animation-duration: 1.8s;
+            z-index: 0;
+            animation-name: rotateCircle10;
+            /*opacity: $opacity;*/
+            opacity: 0.9;
+        }
+
+        .preloader .circles div:nth-child(10):before {
+            top: 25%;
+            left: 25%;
+        }
+
+        @keyframes rotateCircle10 {
+            0% {
+                transform: translateX(-50%) translateY(-50%) scale(1) rotateZ(0deg);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-50%) scale(1) rotateZ(360deg);
+            }
+        }
+
+
     </style>
+
     <link rel="preload" href="{% static 'css/libs.min.css' %}" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="{% static 'css/libs.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
@@ -311,6 +630,17 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body class="uk-animation-fade">
+<div class="holder">
+    <div class="preloader">
+        <div class="circles">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
 <div class="uk-offcanvas-content">
     {% include 'header.html' %}
     <div id="modal-form" uk-modal>
@@ -409,6 +739,13 @@
 
             // avoid to execute the actual submit of the form.
         });
+    });
+
+    jQuery(window).load(function () {
+
+
+        $(".holder").remove();
+
     });
 
 </script>
