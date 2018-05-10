@@ -166,7 +166,7 @@ class License(models.Model):
 class Slider(models.Model):
     title = models.CharField(max_length=800, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Text', blank=True, null=True)
-    image = models.ImageField(upload_to='images/slider_images', verbose_name='Картинка')
+    image = models.ImageField(upload_to='images/slider_images', verbose_name='Картинка (659x768)')
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)

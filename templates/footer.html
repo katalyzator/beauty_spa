@@ -47,7 +47,7 @@
                     <li><a href="{% url 'public_view' %}">Публикации и пресса</a></li>
                     <li><a href="{% url 'partner_view' %}">Наши партнеры</a></li>
                     <li><a href="{% url 'review_view' %}">Отзывы</a></li>
-                    <li><a href="{% url 'license_view' %}">Лицензия</a></li>
+{#                    <li><a href="{% url 'license_view' %}">Лицензия</a></li>#}
                     <li><a href="{% url 'information_view' %}">Правовая информация</a></li>
                 </ul>
             </div>
@@ -74,7 +74,7 @@
                 <ul>
                     <li>Почта: {{ about.email }}</li>
                     <li>Телефон: {{ about.phone_number_1 }}</li>
-                    <li class="fa fa-whatsapp fa-x2">: {{ about.phone_number_2 }}</li>
+                    <li class="fa fa-whatsapp fa-x2"> {{ about.phone_number_2 }}</li>
                     <li>Адрес: {{ about.address }}</li>
                 </ul>
             </div>
