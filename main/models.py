@@ -79,7 +79,7 @@ class DiscountCertificate(models.Model):
     is_active = models.BooleanField(default=False, verbose_name='Активность',
                                     help_text='Поставьте галочку, чтобы вывести на сайте')
 
-    image = models.ImageField(upload_to='images/certificate_images', verbose_name='Image')
+    image = models.ImageField(upload_to='images/certificate_images', verbose_name='Image 320x250')
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -100,7 +100,7 @@ class DiscountCard(models.Model):
     is_active = models.BooleanField(default=False, verbose_name='Активность',
                                     help_text='Поставьте галочку, чтобы вывести на сайте')
 
-    image = models.ImageField(upload_to='images/certificate_images', verbose_name='Image')
+    image = models.ImageField(upload_to='images/certificate_images', verbose_name='Image ')
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -115,7 +115,7 @@ class DiscountCard(models.Model):
 
 class Partner(models.Model):
     name = models.CharField(max_length=255, verbose_name='Название')
-    logo = models.ImageField(upload_to='images/partners_images', verbose_name='Логотип объекта')
+    logo = models.ImageField(upload_to='images/partners_images', verbose_name='Логотип объекта 167x52')
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
@@ -136,7 +136,7 @@ class Gallery(models.Model):
         ('life_style', 'Стиль жизни'),
     )
     title = models.CharField(max_length=255, verbose_name='Название картинки')
-    image = models.ImageField(upload_to='images/gallery_images', verbose_name='Картинка')
+    image = models.ImageField(upload_to='images/gallery_images', verbose_name='Картинка (не должно быть >1MB)')
     type_of_gallery = models.CharField(choices=GALLERY_TYPE, max_length=255, null=True)
 
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
