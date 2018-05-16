@@ -71,6 +71,26 @@ class Service(models.Model):
         return smart_unicode(self.title)
 
 
+class ServiceImage(models.Model):
+    SERVICE_CATEGORY = (
+        ('consulting', 'Диагностика и консультация'),
+        ('medicine', 'Косметология и эстетическая медицина'),
+        ('spa', 'Spa терапия'),
+        ('bath_spa', 'Банный spa'),
+        ('art_beauty', 'Арт и Бьюти студия')
+    )
+
+    category = models.CharField(choices=SERVICE_CATEGORY, max_length=150, verbose_name='Выберите категорию')
+    image = models.ImageField(upload_to='images/service_images', verbose_name='картинка 1318x380')
+
+    class Meta:
+        verbose_name_plural = 'Фоновые картинки раздела Услуги'
+        verbose_name = 'Картинку'
+
+    def __unicode__(self):
+        return smart_unicode(self.category)
+
+
 class DiscountCertificate(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     tag = models.CharField(max_length=255, verbose_name='Тэг', blank=True, null=True)

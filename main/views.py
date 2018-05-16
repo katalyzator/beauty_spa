@@ -142,26 +142,38 @@ def service_view(request, slug):
     services = Service.objects.filter(category=slug)
 
     page_title = ''
+    image_object = ServiceImage.objects.first()
 
     if slug == 'consulting':
+        if ServiceImage.objects.filter(category=slug).exists():
+            image_object = ServiceImage.objects.get(category=slug)
         page_title = "Диагностика и консультации"
 
     if slug == 'medicine':
+        if ServiceImage.objects.filter(category=slug).exists():
+            image_object = ServiceImage.objects.get(category=slug)
         page_title = "Косметология и эстетическая медицина"
 
     if slug == 'spa':
+        if ServiceImage.objects.filter(category=slug).exists():
+            image_object = ServiceImage.objects.get(category=slug)
         page_title = "SPA терапия"
 
     if slug == 'bath_spa':
+        if ServiceImage.objects.filter(category=slug).exists():
+            image_object = ServiceImage.objects.get(category=slug)
         page_title = "Банный SPA"
 
     if slug == 'art_beauty':
+        if ServiceImage.objects.filter(category=slug).exists():
+            image_object = ServiceImage.objects.get(category=slug)
         page_title = "Арт и Бьюти студия"
 
     context = {
         "services": services,
         "page_title": page_title,
-        "about": about
+        "about": about,
+        "service_object": image_object
     }
     template = 'service.html'
 
