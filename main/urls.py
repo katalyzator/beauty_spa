@@ -3,6 +3,7 @@ from django.conf.urls import url
 from main.views import *
 
 urlpatterns = [
+    url(r'^ajax_member_detail', ajax_member_detail_view, name='ajax_member_detail'),
     url(r'^$', index_view, name='index_view'),
     url(r'^about/$', about_view, name='about_view'),
     url(r'^gallery/$', gallery_view, name='gallery_view'),
@@ -26,5 +27,5 @@ urlpatterns = [
     url(r'^event/(?P<id>\d+)/$', event_detail_view, name='single_event'),
     url(r'^cert/(?P<id>\d+)/$', cert_detail_view, name='single_cert'),
     url(r'^card/(?P<id>\d+)/$', card_detail_view, name='single_card'),
-    url(r'^ajax_member_detail/$', ajax_member_detail_view, name='ajax_member_detail'),
+
 ]
