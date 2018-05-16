@@ -11,7 +11,6 @@ from main.models import *
 # services = Service.objects.all()
 
 
-
 @csrf_exempt
 def post_application(request):
     try:
