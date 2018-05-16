@@ -360,6 +360,10 @@ class About(models.Model):
     email = models.EmailField(verbose_name='Email', blank=True, null=True)
     address = models.CharField(max_length=1000, verbose_name='Адрес', blank=True, null=True)
 
+    facebook = models.CharField(max_length=300, verbose_name='Ссылка на facebook')
+    youtube = models.CharField(max_length=300, verbose_name='Ссылка на youtube')
+    instagram = models.CharField(max_length=300, verbose_name='Ссылка на instagram')
+
     start_time = models.TimeField(verbose_name='Время начало работы')
     end_time = models.TimeField(verbose_name='Время завершения работы')
 
@@ -399,6 +403,18 @@ class Promotion(models.Model):
     class Meta:
         verbose_name_plural = 'Акция'
         verbose_name = 'Акция'
+
+    def __unicode__(self):
+        return smart_unicode(self.title)
+
+
+class SocialNetwork(models.Model):
+    title = models.CharField(max_length=255, verbose_name='Название')
+    link = models.CharField(max_length=300, verbose_name='Ссылка', blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = 'Социальные сети'
+        verbose_name = 'объект'
 
     def __unicode__(self):
         return smart_unicode(self.title)
