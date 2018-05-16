@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^event/(?P<id>\d+)/$', event_detail_view, name='single_event'),
     url(r'^cert/(?P<id>\d+)/$', cert_detail_view, name='single_cert'),
     url(r'^card/(?P<id>\d+)/$', card_detail_view, name='single_card'),
+    url(r'^ajax_member_detail/$', ajax_member_detail_view, name='ajax_member_detail'),
 ]

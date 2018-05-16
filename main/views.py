@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.http import JsonResponse, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.views.decorators.csrf import csrf_exempt
 
 from main.models import *
@@ -61,6 +61,18 @@ def about_view(request):
     template = 'abou_us.html'
 
     return render(request, template, context)
+
+
+def ajax_member_detail_view(request):
+    member_id = request.GET.get('member_id')
+
+    member = Member.objects.get(id=member_id)
+
+    context = {
+        "member": member
+    }
+
+    return render_to_response('partial/_member_detail.html', context)
 
 
 def gallery_view(request):
