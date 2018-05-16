@@ -81,6 +81,18 @@ def ajax_member_detail_view(request):
     return render_to_response('partial/_member_detail.html', context)
 
 
+def ajax_offer_view(request):
+    offer_id = request.GET.get('offer_id')
+
+    offer = SpecialOffer.objects.get(id=offer_id)
+
+    context = {
+        "offer": offer
+    }
+
+    return render_to_response('partial/_offer_detail.html', context)
+
+
 def gallery_view(request):
     page_image = PageImage.objects.first()
 
@@ -267,10 +279,12 @@ def partner_view(request):
 def special_offers(request):
     page_image = PageImage.objects.first()
 
+    offers = SpecialOffer.objects.all()
+
     if PageImage.objects.filter(category='special_offers').exists():
         page_image = PageImage.objects.filter(category='special_offers').last()
     about = About.objects.last()
-    context = {"about": about, "page_image": page_image}
+    context = {"about": about, "page_image": page_image, "offers": offers}
     template = 'special-offers.html'
 
     return render(request, template, context)

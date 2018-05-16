@@ -91,6 +91,26 @@ class ServiceImage(models.Model):
         return smart_unicode(self.category)
 
 
+class SpecialOffer(models.Model):
+    SERVICE_CATEGORY = (
+        ('card_club', 'Клубные карты Beauty SPA'),
+        ('promotion', 'Бонусная система'),
+        ('spa_party', 'Spa вечеринки'),
+        ('season_offer', 'Сезонные предложения'),
+    )
+
+    category = models.CharField(choices=SERVICE_CATEGORY, max_length=150, verbose_name='Выберите категорию')
+    image = models.ImageField(upload_to='images/special_offers')
+    text = RichTextUploadingField(verbose_name='Описание')
+
+    class Meta:
+        verbose_name_plural = 'Специальные предложения'
+        verbose_name = 'предложения'
+
+    def __unicode__(self):
+        return smart_unicode(self.category)
+
+
 class PageImage(models.Model):
     PAGE_CATEGORY = (
         ('about', 'О Нас'),

@@ -108,6 +108,7 @@ class PromotionAdmin(admin.ModelAdmin):
         model = Promotion
 
 
+admin.site.register(SpecialOffer)
 admin.site.register(PageImage)
 admin.site.register(ServiceImage)
 admin.site.register(Promotion, PromotionAdmin)

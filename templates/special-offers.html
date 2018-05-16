@@ -5,6 +5,9 @@
 
 
 {% block content %}
+    <div id="modal-overflow" uk-modal>
+
+    </div>
 
     <section class="banner-top information-block uk-background-cover uk-text-center "
              style="background-image: url({{ page_image.image.url }});">
@@ -20,31 +23,41 @@
                     текст с кратким описанием</p>
             </div>
             <div class="infromation_slider" uk-height-match="target: &gt; div &gt; div &gt; div &gt; div &gt; h6">
-                <div class="item">
-                    <div class="image"><img src="{% static 'img/png/i1.png' %}" alt=""></div>
-                    <div class="text">
-                        <h6>Клубные карты Beauty SPA</h6>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image"><img src="{% static 'img/png/i2.png' %}" alt=""></div>
-                    <div class="text">
-                        <h6>Бонусная система</h6>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image"><img src="{% static 'img/png/i3.png' %}" alt=""></div>
-                    <div class="text">
-                        <h6>SPA –вечеринки </h6>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="image"><img src="{% static 'img/png/i4.png' %}" alt=""></div>
-                    <div class="text">
-                        <h6>Cезонные предложения </h6>
-                    </div>
-                </div>
+                {% for item in offers %}
+                    <a href="{% url 'ajax_offer_detail' %}?offer_id={{ item.id }}" class="offer_detail">
+                        <div class="item">
+                            <div class="image"><img src="{{ item.image.url }}" alt=""></div>
+                            <div class="text">
+                                <h6>{{ item.get_category_display }}</h6>
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+
+            $(".offer_detail").on('click', function (e) {
+                e.preventDefault();
+
+                var url = $(this).attr('href'); // the script where you handle the form input.
+
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    success: function (response) {
+                        $('#modal-overflow').html(response)
+                        UIkit.modal('#modal-overflow').toggle()
+                    }
+                });
+
+                // avoid to execute the actual submit of the form.
+            });
+        });
+    </script>
 {% endblock %}
