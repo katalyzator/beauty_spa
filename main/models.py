@@ -293,6 +293,9 @@ class About(models.Model):
     email = models.EmailField(verbose_name='Email', blank=True, null=True)
     address = models.CharField(max_length=1000, verbose_name='Адрес', blank=True, null=True)
 
+    start_time = models.TimeField(verbose_name='Время начало работы')
+    end_time = models.TimeField(verbose_name='Время завершения работы')
+
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
