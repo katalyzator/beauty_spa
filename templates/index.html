@@ -516,37 +516,40 @@
                 {% for item in gallery %}
                     {% if item.type_of_gallery == 'interior' %}
                         <div class="mix category-1">
-                        <div class="item uk-cover-container uk-height-small"
-                             data-src="{{ item.image.url }}">
-                            {% thumbnail item.image "270x300" as im %}
-                                <img src="{{ im.url }}" alt="" uk-cover="">
-                            {% endthumbnail %}
+                            <div class="item uk-cover-container uk-height-small"
+                                 data-src="{{ item.image.url }}">
+                                {% thumbnail item.image "270x300" as im %}
+                                    <img src="{{ im.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}</div>
                         </div>
                     {% endif %}
                     {% if item.type_of_gallery == 'world_of_beauty' %}
                         <div class="mix category-2">
                             <div class="item uk-cover-container uk-height-small" data-src="{{ item.image.url }}">
-                                <img
-                                        src="{{ item.image.url }}" alt="" uk-cover=""></div>
+                                {% thumbnail item.image "270x300" as im %}
+                                    <img src="{{ im.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}</div>
                         </div>
                     {% endif %}
                     {% if item.type_of_gallery == 'products' %}
                         <div class="mix category-3">
                             <div class="item uk-cover-container uk-height-small" data-src="{{ item.image.url }}">
-                                <img
-                                        src="{{ item.image.url }}" alt="" uk-cover=""></div>
+                                {% thumbnail item.image "270x300" as im %}
+                                    <img src="{{ im.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}</div>
                         </div>
                     {% endif %}
                     {% if item.type_of_gallery == 'life_style' %}
                         <div class="mix category-4">
                             <div class="item uk-cover-container uk-height-small" data-src="{{ item.image.url }}">
-                                <img
-                                        src="{{ item.image.url }}" alt="" uk-cover=""></div>
+                                {% thumbnail item.image "270x300" as im %}
+                                    <img src="{{ im.url }}" alt="" uk-cover="">
+                                {% endthumbnail %}</div>
                         </div>
                     {% endif %}
                 {% endfor %}
-                </div>
             </div>
+        </div>
     </section>
     <section class="about_us">
         <div class="uk-container">
