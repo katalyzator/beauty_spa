@@ -394,6 +394,7 @@ class Principe(models.Model):
 class Promotion(models.Model):
     title = models.TextField(verbose_name='Заголовок', help_text='ТОЛЬКО В ТЕЧЕНИИ 24 ЧАСОВ')
     text = RichTextUploadingField(verbose_name='Контент Акции')
+    image = models.ImageField(upload_to='images/promotion', verbose_name='Image 1318x790')
 
     exp_date = models.DateTimeField(verbose_name='Дата окончания', help_text='Отсчет начнется с текущей времени')
 
