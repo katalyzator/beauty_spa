@@ -3,7 +3,7 @@ from django.conf.urls import url
 from main.views import *
 
 urlpatterns = [
-    url(r'^ajax_member_detail', ajax_member_detail_view, name='ajax_member_detail'),
+
     url(r'^$', index_view, name='index_view'),
     url(r'^about/$', about_view, name='about_view'),
     url(r'^gallery/$', gallery_view, name='gallery_view'),
