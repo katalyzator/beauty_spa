@@ -50,13 +50,19 @@ def index_view(request):
 
 
 def about_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='about').exists():
+        page_image = PageImage.objects.filter(category='about').last()
+
     about = About.objects.last()
     members = Member.objects.all()
     principes = Principe.objects.all()
     context = {
         "members": members,
         "about": about,
-        "principes": principes
+        "principes": principes,
+        "page_image": page_image
     }
     template = 'abou_us.html'
 
@@ -76,6 +82,10 @@ def ajax_member_detail_view(request):
 
 
 def gallery_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='gallery').exists():
+        page_image = PageImage.objects.filter(category='gallery').last()
     about = About.objects.last()
     gallery = Gallery.objects.all()
     # for item in gallery:
@@ -83,6 +93,7 @@ def gallery_view(request):
     context = {
         "gallery": gallery,
         "about": about,
+        "page_image": page_image,
     }
     template = 'gallery-page.html'
 
@@ -90,9 +101,13 @@ def gallery_view(request):
 
 
 def bootick_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='bootick').exists():
+        page_image = PageImage.objects.filter(category='bootick').last()
     about = About.objects.last()
     bootick = Bootick.objects.all()
-    context = {"booticks": bootick, "about": about}
+    context = {"booticks": bootick, "about": about, "page_image": page_image}
     template = 'bootick.html'
 
     return render(request, template, context)
@@ -103,7 +118,7 @@ def license_view(request):
     licenses = License.objects.all()
     context = {
         "licenses": licenses,
-        "about": about
+        "about": about,
     }
     template = 'license.html'
 
@@ -111,27 +126,39 @@ def license_view(request):
 
 
 def information_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='information').exists():
+        page_image = PageImage.objects.filter(category='information').last()
     about = About.objects.last()
-    context = {"about": about}
+    context = {"about": about, "page_image": page_image}
     template = 'information.html'
 
     return render(request, template, context)
 
 
 def public_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='publication').exists():
+        page_image = PageImage.objects.filter(category='publication').last()
     about = About.objects.last()
     publics = Publication.objects.all()
     presses = Press.objects.all()
-    context = {"publics": publics, "presses": presses, "about": about}
+    context = {"publics": publics, "presses": presses, "about": about, "page_image": page_image}
     template = 'publick.html'
 
     return render(request, template, context)
 
 
 def review_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='reviews').exists():
+        page_image = PageImage.objects.filter(category='reviews').last()
     about = About.objects.last()
     reviews = Review.objects.filter(is_active=True)
-    context = {"reviews": reviews, "about": about}
+    context = {"reviews": reviews, "about": about, "page_image": page_image}
     template = 'revius.html'
 
     return render(request, template, context)
@@ -146,27 +173,27 @@ def service_view(request, slug):
 
     if slug == 'consulting':
         if ServiceImage.objects.filter(category=slug).exists():
-            image_object = ServiceImage.objects.get(category=slug)
+            image_object = ServiceImage.objects.filter(category=slug).last()
         page_title = "Диагностика и консультации"
 
     if slug == 'medicine':
         if ServiceImage.objects.filter(category=slug).exists():
-            image_object = ServiceImage.objects.get(category=slug)
+            image_object = ServiceImage.objects.filter(category=slug).last()
         page_title = "Косметология и эстетическая медицина"
 
     if slug == 'spa':
         if ServiceImage.objects.filter(category=slug).exists():
-            image_object = ServiceImage.objects.get(category=slug)
+            image_object = ServiceImage.objects.filter(category=slug).last()
         page_title = "SPA терапия"
 
     if slug == 'bath_spa':
         if ServiceImage.objects.filter(category=slug).exists():
-            image_object = ServiceImage.objects.get(category=slug)
+            image_object = ServiceImage.objects.filter(category=slug).last()
         page_title = "Банный SPA"
 
     if slug == 'art_beauty':
         if ServiceImage.objects.filter(category=slug).exists():
-            image_object = ServiceImage.objects.get(category=slug)
+            image_object = ServiceImage.objects.filter(category=slug).last()
         page_title = "Арт и Бьюти студия"
 
     context = {
@@ -181,31 +208,44 @@ def service_view(request, slug):
 
 
 def eticket_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='etiket').exists():
+        page_image = PageImage.objects.filter(category='etiket').last()
     about = About.objects.last()
-    context = {"about": about}
+    context = {"about": about, "page_image": page_image}
     template = 'etiket.html'
 
     return render(request, template, context)
 
 
 def event_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='news').exists():
+        page_image = PageImage.objects.filter(category='news').last()
     about = About.objects.last()
     events = Event.objects.all()
     news = News.objects.all()
-    context = {"events": events, "news": news, "about": about}
+    context = {"events": events, "news": news, "about": about, "page_image": page_image}
     template = 'event.html'
 
     return render(request, template, context)
 
 
 def certificate_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='certificates').exists():
+        page_image = PageImage.objects.filter(category='certificates').last()
     about = About.objects.last()
     certificates = DiscountCertificate.objects.all()
     cards = DiscountCard.objects.all()
     context = {
         "certificates": certificates,
         "cards": cards,
-        "about": about
+        "about": about,
+        "page_image": page_image
     }
     template = 'spa-sertificat.html'
 
@@ -225,16 +265,24 @@ def partner_view(request):
 
 
 def special_offers(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='special_offers').exists():
+        page_image = PageImage.objects.filter(category='special_offers').last()
     about = About.objects.last()
-    context = {"about": about}
+    context = {"about": about, "page_image": page_image}
     template = 'special-offers.html'
 
     return render(request, template, context)
 
 
 def kitchen_view(request):
+    page_image = PageImage.objects.first()
+
+    if PageImage.objects.filter(category='kitchen').exists():
+        page_image = PageImage.objects.filter(category='kitchen').last()
     about = About.objects.last()
-    context = {"about": about}
+    context = {"about": about, "page_image": page_image}
     template = 'spa_kitchen.html'
 
     return render(request, template, context)

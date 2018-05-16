@@ -7,13 +7,13 @@
 {% block content %}
 
     <section class="banner-top information-block uk-background-cover uk-text-center "
-             style="background-image: url({% static 'img/jpg/off.jpg' %});">
+             style="background-image: url({{ page_image.image.url }});">
         <div class="uk-container">
-{#            <ul class="uk-breadcrumb">#}
-{#                <li><a href="">название страницы </a></li>#}
-{#                <li><a href="">название страницы</a></li>#}
-{#                <li><span>название страницы</span></li>#}
-{#            </ul>#}
+            {#            <ul class="uk-breadcrumb">#}
+            {#                <li><a href="">название страницы </a></li>#}
+            {#                <li><a href="">название страницы</a></li>#}
+            {#                <li><span>название страницы</span></li>#}
+            {#            </ul>#}
             <div class="uk-margin-large uk-width-2-3@m uk-margin-auto">
                 <h1>Спецпредложения</h1>
                 <p>Мы распологаем ряд бонусных систем и клубных карт для удобства клиентов их получение, а так тут будет

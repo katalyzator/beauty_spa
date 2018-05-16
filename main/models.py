@@ -91,6 +91,33 @@ class ServiceImage(models.Model):
         return smart_unicode(self.category)
 
 
+class PageImage(models.Model):
+    PAGE_CATEGORY = (
+        ('about', 'О Нас'),
+        ('gallery', 'Галерея'),
+        ('etiket', 'Этикет'),
+        ('news', 'События и новости'),
+        ('publication', 'Публикации и пресса'),
+        ('reviews', 'Отзывы'),
+        ('information', 'Правовая информация'),
+        ('bootick', 'Косметический Бутик'),
+        ('special_offers', 'Специальные предложения'),
+        ('certificates', 'СПА-Сертификаты'),
+        ('kitchen', 'СПА-Кухня'),
+
+    )
+
+    category = models.CharField(choices=PAGE_CATEGORY, max_length=150, verbose_name='Выберите категорию')
+    image = models.ImageField(upload_to='images/service_images', verbose_name='картинка 1318x380')
+
+    class Meta:
+        verbose_name_plural = 'Фоновые картинки для всех страниц'
+        verbose_name = 'Картинку'
+
+    def __unicode__(self):
+        return smart_unicode(self.category)
+
+
 class DiscountCertificate(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     tag = models.CharField(max_length=255, verbose_name='Тэг', blank=True, null=True)
