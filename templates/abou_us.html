@@ -3,6 +3,11 @@
 {% load staticfiles thumbnail %}
 
 {% block content %}
+
+    <div id="modal-overflow" uk-modal>
+
+    </div>
+
     <section class="banner-top uk-background-cover uk-text-left "
              style="background-image: url({{ page_image.image.url }});">
         <div class="uk-container">
@@ -143,7 +148,11 @@
                                             <h5>{{ item.full_name }}</h5>
                                         </div>
                                         <div class="uk-margin">
-                                            <p>{{ item.description }}</p>
+                                            <p>{{ item.description|truncatechars:100 }}</p>
+                                        </div>
+                                        <div class="uk-text-center uk-margin-small"><a
+                                                class="uk-button uk-button-default member_link"
+                                                 data-ajax-url="{% url 'ajax_member_detail' %}?member_id={{ item.id }}">Подробнее</a>
                                         </div>
                                     </div>
                                 </div>
@@ -154,4 +163,28 @@
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+
+            $(".member_link").on('click', function (e) {
+                e.preventDefault();
+
+                var url = $(this).attr('data-ajax-url'); // the script where you handle the form input.
+
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    success: function (response) {
+                        $('#modal-overflow').html(response)
+                        UIkit.modal('#modal-overflow').toggle()
+                    }
+                });
+
+                // avoid to execute the actual submit of the form.
+            });
+        });
+    </script>
 {% endblock %}
