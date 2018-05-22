@@ -225,7 +225,9 @@
             }
         }
 
+
         @media screen and (max-width: 640px) {
+
             header nav .uk-navbar-nav li {
                 margin: 0
             }
@@ -563,6 +565,22 @@
     <link rel="preload" href="{% static 'css/libs.min.css' %}" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="{% static 'css/libs.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <style>
+        @media screen and (max-width: 960px) {
+            section.about_us {
+                padding: 30px 0;
+            }
+            section.specialists {
+                padding: 30px 0;
+            }
+            section.action {
+                padding: 30px 0;
+            }
+            section.action form {
+                padding-bottom: 0;
+            }
+        }
+    </style>
 
     {#    <script>!function (u) {#}
     {#        "use strict";#}
