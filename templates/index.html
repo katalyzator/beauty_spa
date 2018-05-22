@@ -295,9 +295,9 @@
                                             <h6>{{ item.profession }}</h6>
                                             <h5>{{ item.full_name }}</h5>
                                         </div>
-{#                                        <div class="uk-margin">#}
-{#                                            <p>{{ item.description|truncatechars:100 }}</p>#}
-{#                                        </div>#}
+                                        {#                                        <div class="uk-margin">#}
+                                        {#                                            <p>{{ item.description|truncatechars:100 }}</p>#}
+                                        {#                                        </div>#}
 
                                         <div class="uk-text-center uk-margin-small"><a
                                                 class="uk-button uk-button-default"
@@ -319,9 +319,9 @@
                         class="uk-position-center-right-out uk-position-small" href="#" uk-slidenav-next=""
                         uk-slider-item="next"></a></div>
             </div>
-{#            <div class="uk-text-center uk-margin"><a class="uk-button uk-button-default" href="{% url 'about_view' %}">Все#}
-{#                специалисты</a>#}
-{#            </div>#}
+            {#            <div class="uk-text-center uk-margin"><a class="uk-button uk-button-default" href="{% url 'about_view' %}">Все#}
+            {#                специалисты</a>#}
+            {#            </div>#}
         </div>
     </section>
     <section class="guests">
@@ -336,11 +336,16 @@
                                     <div class="item uk-padding-large">
                                         <ul class="uk-subnav uk-subnav-pill uk-child-width-1-3"
                                             uk-switcher="animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium">
-                                            <li>
+                                            <li><a class="uk-cover-container" href="#">
                                                 {% thumbnail item.image "187x120" as im %}
                                                     <img src="{{ im.url }}" alt="" uk-cover="">
-                                                {% endthumbnail %}
-                                            </li>
+                                                {% endthumbnail %}</a></li>
+
+{#                                            <li>#}
+{#                                                {% thumbnail item.image "187x120" as im %}#}
+{#                                                    <img src="{{ im.url }}" alt="" uk-cover="">#}
+{#                                                {% endthumbnail %}#}
+{#                                            </li>#}
                                         </ul>
                                         <ul class="uk-switcher">
                                             <li><b>{{ item.full_name }}</b>
