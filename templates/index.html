@@ -27,7 +27,8 @@
         </div>
         <div class="slider-for uk-visible@m">
             {% for item in sliders %}
-                <div class="uk-cover-container"><img data-lazy="{{ item.image.url }}" alt="" uk-cover="">
+                <div class="uk-cover-container">
+                    <img data-lazy="{{ item.image.url }}" alt="" uk-cover="">
                 </div>
             {% endfor %}
         </div>
