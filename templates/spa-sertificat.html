@@ -45,8 +45,8 @@
                                     <div class="price"><span>Цена: <br> {{ item.price }} сом</span></div>
                                 </div>
                                 <div class="text"><span>{{ item.tag }}</span>
-                                    {#                                    <h4>{{ item.description|truncatechars:200 }}</h4>#}
-                                    <a class="uk-button uk-button-default" href="{% url 'single_cert' id=item.id %}">Узнать
+{#                                    <h4>{{ item.description|truncatechars:200 }}</h4>#}
+                                    <a class="uk-button uk-button-default uk-display-block" href="{% url 'single_cert' id=item.id %}">Узнать
                                         больше</a>
                                 </div>
                             </li>
@@ -55,7 +55,7 @@
                     <a class="uk-position-center-left uk-position-small" href="#" uk-slidenav-previous=""
                        uk-slider-item="previous"></a>
                     <a class="uk-position-center-right uk-position-small" href="#"
-                       uk-slidenav-next="" uk-slider-item="next"></a>
+                                                        uk-slidenav-next="" uk-slider-item="next"></a>
                 </div>
             </div>
             {#            <div class="uk-text-center">#}
