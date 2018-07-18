@@ -100,7 +100,7 @@ class SpecialOffer(models.Model):
     )
 
     category = models.CharField(choices=SERVICE_CATEGORY, max_length=150, verbose_name='Выберите категорию')
-    image = models.ImageField(upload_to='images/special_offers')
+    image = models.ImageField(upload_to='images/special_offers', null=True, blank=True)
     text = RichTextUploadingField(verbose_name='Описание')
 
     class Meta:
