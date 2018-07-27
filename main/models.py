@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
-from django.utils.encoding import smart_unicode
+from django.utils.encoding import smart_text
 
 
 class Member(models.Model):
@@ -22,7 +22,7 @@ class Member(models.Model):
         verbose_name = 'Специалиста'
 
     def __unicode__(self):
-        return smart_unicode(self.full_name)
+        return smart_text(self.full_name)
 
 
 class Review(models.Model):
@@ -40,7 +40,7 @@ class Review(models.Model):
         verbose_name = 'Отзыв'
 
     def __unicode__(self):
-        return smart_unicode(self.full_name)
+        return smart_text(self.full_name)
 
 
 class Service(models.Model):
@@ -68,7 +68,7 @@ class Service(models.Model):
         verbose_name = 'Услугу'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class ServiceImage(models.Model):
@@ -88,7 +88,7 @@ class ServiceImage(models.Model):
         verbose_name = 'Картинку'
 
     def __unicode__(self):
-        return smart_unicode(self.category)
+        return smart_text(self.category)
 
 
 class SpecialOffer(models.Model):
@@ -108,7 +108,7 @@ class SpecialOffer(models.Model):
         verbose_name = 'предложения'
 
     def __unicode__(self):
-        return smart_unicode(self.category)
+        return smart_text(self.category)
 
 
 class PageImage(models.Model):
@@ -135,7 +135,7 @@ class PageImage(models.Model):
         verbose_name = 'Картинку'
 
     def __unicode__(self):
-        return smart_unicode(self.category)
+        return smart_text(self.category)
 
 
 class DiscountCertificate(models.Model):
@@ -156,7 +156,7 @@ class DiscountCertificate(models.Model):
         verbose_name = 'Сертификат'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class DiscountCard(models.Model):
@@ -177,7 +177,7 @@ class DiscountCard(models.Model):
         verbose_name = 'Карту'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class Partner(models.Model):
@@ -192,7 +192,7 @@ class Partner(models.Model):
         verbose_name = 'Партнера'
 
     def __unicode__(self):
-        return smart_unicode(self.name)
+        return smart_text(self.name)
 
 
 class Gallery(models.Model):
@@ -214,7 +214,7 @@ class Gallery(models.Model):
         verbose_name = 'Картинку'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class License(models.Model):
@@ -227,7 +227,7 @@ class License(models.Model):
         verbose_name = 'Картинку'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class Slider(models.Model):
@@ -243,7 +243,7 @@ class Slider(models.Model):
         verbose_name = 'Слайд'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class Application(models.Model):
@@ -260,7 +260,7 @@ class Application(models.Model):
         verbose_name = 'заявку'
 
     def __unicode__(self):
-        return smart_unicode(self.first_name)
+        return smart_text(self.first_name)
 
 
 class Bootick(models.Model):
@@ -277,7 +277,7 @@ class Bootick(models.Model):
         verbose_name = 'Объект'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class Event(models.Model):
@@ -296,7 +296,7 @@ class Event(models.Model):
         verbose_name = 'Событие'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class News(models.Model):
@@ -314,7 +314,7 @@ class News(models.Model):
         verbose_name = 'Новость'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class Publication(models.Model):
@@ -332,7 +332,7 @@ class Publication(models.Model):
         verbose_name = 'Публикацию'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class Press(models.Model):
@@ -350,7 +350,7 @@ class Press(models.Model):
         verbose_name = 'Прессу'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class About(models.Model):
@@ -375,7 +375,7 @@ class About(models.Model):
         verbose_name = 'объект'
 
     def __unicode__(self):
-        return smart_unicode(self.phone_number_1)
+        return smart_text(self.phone_number_1)
 
 
 class Principe(models.Model):
@@ -388,7 +388,7 @@ class Principe(models.Model):
         verbose_name = 'принцип'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class Promotion(models.Model):
@@ -406,7 +406,7 @@ class Promotion(models.Model):
         verbose_name = 'Акция'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
 
 
 class SocialNetwork(models.Model):
@@ -418,4 +418,11 @@ class SocialNetwork(models.Model):
         verbose_name = 'объект'
 
     def __unicode__(self):
-        return smart_unicode(self.title)
+        return smart_text(self.title)
+
+
+class SPAKitchen(models.Model):
+    picture = models.ImageField(upload_to='', null=True, verbose_name='SPA кухня: картинка')
+
+    class Meta:
+        verbose_name_plural = 'SPA Кухня'

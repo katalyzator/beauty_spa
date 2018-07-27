@@ -243,7 +243,7 @@
                     <form id="action-form-ajax" action="{% url 'post_application' %}" method="post">
                         <fieldset class="uk-fieldset">
                             <div class="uk-margin">
-                                <legend class="uk-legend uk-text-center">Оставьте заявку чтобы, <br> участвовать в акции
+                                <legend class="uk-legend uk-text-center">Оставьте заявку, чтобы <br> участвовать в акции
                                 </legend>
                             </div>
                             <div class="uk-margin-small">
@@ -386,7 +386,7 @@
         </div>
     </section>
     <section class="spa-kitchen">
-        <div class="bg-image" style="background-image: url({% static 'img/jpg/kitchen.jpg' %});"></div>
+        <div class="bg-image" style="background-image: url({{ kitchen.picture.url }});"></div>
         <div class="uk-container">
             <div class="uk-grid uk-grid-collapse uk-child-width-1-2@m" uk-grid="">
                 <div></div>
@@ -486,7 +486,7 @@
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
                                 <div class="uk-width-auto@m"><img src="{% static 'img/png/k7.png' %}" alt=""></div>
                                 <div class="uk-width-expand">
-                                    <p>Натуральные ингридиенты</p>
+                                    <p>Натуральные ингредиенты</p>
                                 </div>
                             </div>
                             <div class="uk-grid uk-margin-small uk-grid-small uk-flex-middle">
@@ -509,10 +509,10 @@
         <div class="uk-container">
             <div class="uk-text-center"><img src="{% static 'img/png/super.png' %}" alt="">
                 <h4>Подарочные сертификаты</h4>
-                <p>«Beauty SPA» с удовольствием предлагает Вам свои подарки — подарочные сертификаты с безграничным
-                    номиналом и курьерской доставкой в любую точку Бишкека. </p><a class="uk-button uk-button-default"
-                                                                                   href=""
-                                                                                   uk-toggle="target: #modal-form">Подробнее</a>
+                <p>Beauty SPA by World Class с удовольствием, предлагает Вам подарочные сертификаты разного номинала и курьерской доставкой в любую точку Бишкека.</p>
+                <a class="uk-button uk-button-default"
+                   href=""
+                   uk-toggle="target: #modal-form">Подробнее</a>
             </div>
         </div>
     </section>
@@ -628,7 +628,7 @@
                                                                            uk-cover="">
                         </div>
                         <div class="uk-width-expand text">
-                            <h4>Полотенца, мыло, шампунь включено</h4>
+                            <h4>Полотенца, мыло, шампунь - все включено</h4>
                             {#                            <p>Добавьте краткое описание ваших преимуществ, чтобы показать лучшее из вашего продукта,#}
                             {#                                услуги.</p>#}
                         </div>

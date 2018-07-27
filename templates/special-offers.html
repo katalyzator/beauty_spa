@@ -26,7 +26,9 @@
                 {% for item in offers %}
                     <a href="{% url 'ajax_offer_detail' %}?offer_id={{ item.id }}" class="offer_detail">
                         <div class="item">
-                            <div class="image"><img src="{{ item.image.url }}" alt=""></div>
+                            <div class="image">
+                              {% if item.image %}<img src="{{ item.image.url }}" alt="">{% endif %}
+                            </div>
                             <div class="text">
                                 <h6>{{ item.get_category_display }}</h6>
                             </div>

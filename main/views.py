@@ -35,6 +35,7 @@ def index_view(request):
     slider = Slider.objects.all()
     partners = Partner.objects.all()
     members = Member.objects.all()
+    kitchen = SPAKitchen.objects.first()
     context = {
         "members": members,
         "reviews": reviews,
@@ -42,7 +43,8 @@ def index_view(request):
         "sliders": slider,
         "partners": partners,
         "about": about,
-        "promotion": promotion
+        "promotion": promotion,
+        "kitchen": kitchen,
     }
     template = 'index.html'
 
